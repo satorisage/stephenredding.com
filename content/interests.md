@@ -1,6 +1,6 @@
 ---
 title: "Interests"
-og_description: "Learn about what Stephen is interested in."
+og_description: "Learn about my interests"
 draft: false
 weight: 2
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Certifications"
+og_description: "My Certifications"
 layout: "list"
 draft: false
 weight: 3

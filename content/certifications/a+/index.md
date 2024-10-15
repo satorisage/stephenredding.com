@@ -5,7 +5,7 @@ layout: "single"
 issuer: "CompTIA"
 proof_url: "https://www.credly.com/badges/11ac713d-e226-4b42-8aaf-18fe382fabd1/public_url"
 image: "/images/certifications/a+.png"  # Image for the certification
-og_description: "Stephen is CompTIA A+ certified." # OpenGraph description for this page
+og_description: "CompTIA A+ Certification" # OpenGraph description for this page
 weight: 1  # Control the order in which the certifications are displayed
 excludeFromMenu: true  # This parameter will exclude this page from the menu
 ---

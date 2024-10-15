@@ -5,7 +5,7 @@ layout: "single"
 issuer: "OffSec"
 proof_url: "https://www.credential.net/0b4cd99b-b70b-4736-a66b-e6895c5f6f44"
 image: "/images/certifications/oscp.png"  # Image for the certification
-og_description: "Stephen is an Offensive Security Certified Professional" # OpenGraph description for this page
+og_description: "Offensive Security Certified Professional" # OpenGraph description for this page
 weight: 1  # Control the order in which the certifications are displayed
 excludeFromMenu: true  # This parameter will exclude this page from the menu
 ---
