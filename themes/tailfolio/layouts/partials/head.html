@@ -1,5 +1,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<!-- Open Graph Meta Tags for Link Sharing -->
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="Learn about Stephen Redding's journey through beliefs, personal transformation, and technical expertise, helping others unlock their potential and achieve meaningful change.">
+<meta property="og:image" content="{{ .Site.BaseURL }}images/me.jpg">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="website">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
