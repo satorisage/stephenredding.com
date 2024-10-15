@@ -1,0 +1,10 @@
+<div class="flex justify-between items-center lg:hidden text-white bg-gray-800 text-xl font-semibold p-4">
+    {{ .Site.Title }}    
+    <div class="relative">
+        <button class="bg-gray-700 text-white px-3 py-1 rounded focus:outline-none hover:bg-gray-600" onclick="toggleMenu()">
+        ☰
+        </button>
+
+        {{ partial "dropdown.html" . }}
+    </div>
+</div>

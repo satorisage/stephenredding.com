@@ -1,0 +1,38 @@
+<aside class="w-64 bg-gray-800 text-white font-semibold hidden items-center text-xl lg:flex flex-col flex-shrink-0">
+  <!-- Site Title -->
+  <div class="p-4">
+    {{ .Site.Title }}
+  </div>
+  <!-- Profile Image -->
+  <div class="mb-6">
+    <img src="/images/me.jpg" alt="Stephen Redding" class="w-38 h-38 rounded-full object-cover shadow-lg">
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="p-2">
+    <ul>
+      <!-- Home link -->
+      <li class="mb-2">
+        <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink "/" }}bg-gray-700{{ end }}">Home</a>
+      </li>
+
+      <!-- Collect top-level standalone pages and section index pages -->
+      {{ $pages := slice }}
+
+      <!-- Collect standalone pages (not inside a section) -->
+      {{ $pages = $pages | append (where .Site.RegularPages "Section" "" ) }}
+
+      <!-- Collect section index pages (_index.md in folders) -->
+      {{ $pages = $pages | append .Site.Sections.ByWeight }}
+
+      <!-- Sort the collected pages by weight -->
+      {{ range sort $pages "Weight" }}
+        <li class="mb-2">
+          <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink $.Permalink }}bg-gray-700{{ end }}">
+            {{ .Title }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</aside>

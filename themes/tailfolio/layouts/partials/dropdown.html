@@ -1,0 +1,29 @@
+<!-- Dropdown Menu -->
+<div id="dropdownMenu" class="absolute right-0 mt-2 p-2 w-48 bg-gray-800 text-white rounded-lg shadow-xl hidden">
+  <ul>
+    <!-- Home link -->
+    <li class="mb-2">
+      <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink "/" }}bg-gray-700{{ end }}">
+        Home
+      </a>
+    </li>
+
+    <!-- Collect top-level standalone pages and section index pages -->
+    {{ $pages := slice }}
+
+    <!-- Collect standalone pages (not inside a section) -->
+    {{ $pages = $pages | append (where .Site.RegularPages "Section" "" ) }}
+
+    <!-- Collect section index pages (_index.md in folders) -->
+    {{ $pages = $pages | append .Site.Sections.ByWeight }}
+
+    <!-- Sort the collected pages by weight -->
+    {{ range sort $pages "Weight" }}
+      <li class="mb-2">
+        <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink $.Permalink }}bg-gray-700{{ end }}">
+          {{ .Title }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</div>

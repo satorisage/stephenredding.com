@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="min-h-screen flex flex-col">
+  {{ partial "nav.html" . }}
+  <div class="flex flex-1 h-full">
+    {{ partial "sidebar.html" . }} 
+    <main class="flex-1 p-8 bg-gray-200 min-h-screen">
+      {{ block "main" . }}
+      {{ end }}
+  </main>
+  </div>
+  <script>
+    // JavaScript to toggle the dropdown menu visibility
+    function toggleMenu() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

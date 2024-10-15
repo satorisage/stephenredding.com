@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <article class="prose prose-lg max-w-none">
+    <!-- Certification Image (if available) -->
+    {{ if .Params.image }}
+      <div class="w-full h-64 flex items-center justify-center mb-4">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="object-contain w-auto h-full">
+      </div>
+    {{ end }}
+    <h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
+    <!-- Display the issuer if it exists -->
+    {{ if .Params.issuer }}
+        <p class="text-gray-700 mb-4">Issued by: <strong>{{ .Params.issuer }}</strong></p>
+    {{ end }}
+    <!-- Certification Description -->
+    <div>
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

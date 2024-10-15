@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/certifications/crto/</loc>
+    <lastmod>2022-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/certifications/oscp/</loc>
+    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/certifications/cios/</loc>
+    <lastmod>2008-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/certifications/network&#43;/</loc>
+    <lastmod>2008-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/certifications/a&#43;/</loc>
+    <lastmod>2006-06-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/interests/</loc>
+  </url><url>
+    <loc>http://localhost:1313/certifications/</loc>
+    <lastmod>2022-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/contact/</loc>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2022-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>
