@@ -2,7 +2,8 @@
 title: "Interests"
 og_description: "Learn about my interests"
 draft: false
-weight: 2
+weight: 20
+enable: true
 ---
 My interests revolve around exploring the deep intersections of thought, belief, and personal transformation. I’m drawn to subjects that challenge conventional thinking and offer a new lens through which to view reality. Whether it’s examining how subconscious patterns influence behavior or studying the subtle energetics of the mind, I’m continually seeking knowledge that sharpens both practical insight and spiritual wisdom.
 

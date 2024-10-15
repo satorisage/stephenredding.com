@@ -7,7 +7,7 @@ proof_url: "https://www.credly.com/badges/11ac713d-e226-4b42-8aaf-18fe382fabd1/p
 image: "/images/certifications/a+.png"  # Image for the certification
 og_description: "CompTIA A+ Certification" # OpenGraph description for this page
 weight: 1  # Control the order in which the certifications are displayed
-excludeFromMenu: true  # This parameter will exclude this page from the menu
+enable: true
 ---
 CompTIA A+ earners who certified between January 1993 and December 31, 2010, have an A+
 considered good-for-life (GFL). It does not expire and does not have CE requirements. Earners

@@ -5,32 +5,34 @@
   </article>
   <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {{ range .Pages }}
-      <div class="border rounded-lg shadow-lg overflow-hidden">
-        <a href="{{ .Permalink }}" class="block">
-          <!-- Certification Image (if available) -->
-          {{ if .Params.image }}
-            <div class="w-full h-48 flex items-center justify-center bg-white">
-              <img src="{{ .Params.image }}" alt="{{ .Title }}" class="object-contain w-auto h-full">
+      {{ if .Params.enable }}
+        <div class="border rounded-lg shadow-lg overflow-hidden">
+          <a href="{{ .Permalink }}" class="block">
+            <!-- Certification Image (if available) -->
+            {{ if .Params.image }}
+              <div class="w-full h-48 flex items-center justify-center bg-white">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="object-contain w-auto h-full">
+              </div>
+            {{ else }}
+              <!-- Fallback if no image -->
+              <div class="w-full h-48 bg-gray-300 flex items-center justify-center">
+                <span class="text-gray-500">No Image Available</span>
+              </div>
+            {{ end }}
+    
+            <!-- Certification Title -->
+            <div class="pt-1">
+              <h2 class="text-lg font-semibold text-center m-0">{{ .Title }}</h2>
             </div>
-          {{ else }}
-            <!-- Fallback if no image -->
-            <div class="w-full h-48 bg-gray-300 flex items-center justify-center">
-              <span class="text-gray-500">No Image Available</span>
-            </div>
-          {{ end }}
-  
-          <!-- Certification Title -->
-          <div class="py-2 px-1 bg-white ">
-            <h2 class="text-lg font-semibold text-center m-0">{{ .Title }}</h2>
-          </div>
-          <!-- Proof link (if available) -->
-          {{ if .Params.proof_url }}
-            <p class="text-center p-2">
-              <a href="{{ .Params.proof_url }}" class="text-blue-600 hover:text-blue-800" target="_blank">View Certificate</a>
-            </p>
-          {{ end }}
-        </a>
-      </div>
+            <!-- Proof link (if available) -->
+            {{ if .Params.proof_url }}
+              <p class="pb-1 text-center">
+                <a href="{{ .Params.proof_url }}" class="text-blue-600 hover:text-blue-800" target="_blank">View Certificate</a>
+              </p>
+            {{ end }}
+          </a>
+        </div>
+      {{ end }}
     {{ end }}
   </div>
 {{ end }}

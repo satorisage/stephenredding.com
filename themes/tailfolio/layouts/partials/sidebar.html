@@ -27,11 +27,13 @@
 
       <!-- Sort the collected pages by weight -->
       {{ range sort $pages "Weight" }}
-        <li class="mb-2">
-          <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink $.Permalink }}bg-gray-700{{ end }}">
-            {{ .Title }}
-          </a>
-        </li>
+        {{ if .Params.enable }}
+          <li class="mb-2">
+            <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink $.Permalink }}bg-gray-700{{ end }}">
+              {{ .Title }}
+            </a>
+          </li>
+        {{ end }}
       {{ end }}
     </ul>
   </nav>
