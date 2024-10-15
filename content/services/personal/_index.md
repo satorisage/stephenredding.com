@@ -1,5 +1,6 @@
 ---
 title: "Personal Services"
+og_description: "Personal Coaching Services"
 weight: 20
 enable: true
 ---

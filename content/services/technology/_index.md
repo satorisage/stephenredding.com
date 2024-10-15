@@ -1,5 +1,6 @@
 ---
 title: "Technology Services"
+og_description: "Technology Services"
 weight: 10
 enable: true
 ---

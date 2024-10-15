@@ -1,6 +1,6 @@
 ---
 title: "Services"
-og_description: "Browse our technology and personal services."
+og_description: "My services and offerings"
 layout: "list"
 enable: true
 weight: 30

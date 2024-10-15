@@ -1,6 +1,6 @@
 ---
 title: "Residential Tech"
-og_description: "Residential Tech Service"
+og_description: "Residential Technology Support"
 image: "/images/services/res-tech.webp"
 image_pos: "object-[0%_20%]"
 price: "$120 / hr"

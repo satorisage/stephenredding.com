@@ -1,6 +1,6 @@
 ---
 title: "Business Tech"
-og_description: "My Certifications"
+og_description: "Business Technology Support"
 image: "/images/services/biz-tech.webp"
 image_pos: "auto"
 price: "$180 / hr"
