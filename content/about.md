@@ -1,6 +1,8 @@
 ---
 title: "About Me"
 draft: false
+type: "about"
+layout: "single"
 weight: 1
 ---
 A timeless call to help others led me to a lifelong fascination with beliefs and their profound impact on our lives. At the core of everything I do is the belief that the mind shapes our outcomes. My journey has been one of deep exploration, where I’ve come to understand how both the technical and the personal are reflections of the same underlying principles.
