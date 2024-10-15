@@ -1,11 +1,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+
+<!-- Favicon for browser tab (small size) -->
+<link rel="icon" href="{{ "images/me-32x32.png" | relURL }}" sizes="32x32" type="image/png">
+
+<!-- Larger icon for iOS/Android (500x500) -->
+<link rel="apple-touch-icon" href="{{ "images/me-500x500.jpg" | relURL }}" sizes="500x500">
+
 <!-- Open Graph Meta Tags for Link Sharing -->
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="Learn about Stephen Redding's journey through beliefs, personal transformation, and technical expertise, helping others unlock their potential and achieve meaningful change.">
 <meta property="og:image" content="{{ .Site.BaseURL }}images/me.jpg">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="website">
+
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
