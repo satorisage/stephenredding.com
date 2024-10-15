@@ -1,5 +1,6 @@
 ---
 title: "Welcome to My Site"
+og_description: "Learn about Stephen Redding's journey through beliefs, personal transformation, and technical expertise, helping others unlock their potential and achieve meaningful change." # OpenGraph description for this page
 draft: false
 ---
 Welcome! I’m Stephen Redding, and I’ve dedicated my life to mastering both the technical and the personal. With a deep background in IT systems and troubleshooting, I’ve also explored the power of the mind and how our beliefs shape our experiences.

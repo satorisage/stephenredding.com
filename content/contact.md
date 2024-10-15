@@ -1,5 +1,6 @@
 ---
 title: "Get In Touch"
+og_description: "Contact Stephen Redding"
 draft: false
 weight: 6
 ---

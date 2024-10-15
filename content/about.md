@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 draft: false
+og_description: "About Stephen Redding"
 type: "about"
 layout: "single"
 weight: 1

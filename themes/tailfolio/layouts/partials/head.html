@@ -9,7 +9,7 @@
 
 <!-- Open Graph Meta Tags for Link Sharing -->
 <meta property="og:title" content="{{ .Title }}">
-<meta property="og:description" content="Learn about Stephen Redding's journey through beliefs, personal transformation, and technical expertise, helping others unlock their potential and achieve meaningful change.">
+<meta property="og:description" content="{{ with .Params.og_description }}{{ . }}{{ else }}Stephen Redding's Website{{ end }}">
 <meta property="og:image" content="{{ .Site.BaseURL }}images/me.jpg">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="website">
