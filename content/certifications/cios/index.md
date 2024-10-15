@@ -3,6 +3,7 @@ title: "CIOS"
 date: 2008-09-16
 layout: "single"
 issuer: "CompTIA"
+proof_url: "https://www.credly.com/badges/6925dd08-dcd8-4e4c-b37a-8da2a813d942/public_url"
 image: "/images/certifications/cios.png"  # Image for the certification
 weight: 1  # Control the order in which the certifications are displayed
 excludeFromMenu: true  # This parameter will exclude this page from the menu

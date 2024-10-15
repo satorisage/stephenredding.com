@@ -6,11 +6,17 @@
         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="object-contain w-auto h-full">
       </div>
     {{ end }}
-    <h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
+    <h1 class="text-3xl font-bold">{{ .Title }}</h1>
     <!-- Display the issuer if it exists -->
     {{ if .Params.issuer }}
-        <p class="text-gray-700 mb-4">Issued by: <strong>{{ .Params.issuer }}</strong></p>
+        <p class="text-gray-700">Issued by: <strong>{{ .Params.issuer }}</strong></p>
     {{ end }}
+        <!-- Proof link (if available) -->
+        {{ if .Params.proof_url }}
+        <p>
+          <a href="{{ .Params.proof_url }}" class="text-blue-600 hover:text-blue-800" target="_blank">View Certificate</a>
+        </p>
+      {{ end }}
     <!-- Certification Description -->
     <div>
       {{ .Content }}
