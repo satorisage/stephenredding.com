@@ -1,0 +1,6 @@
+---
+title: "Koala Center for Sleep & TMJ Disorders"
+person: "Angela Prayne"
+enable: true
+---
+I am pleased to write this letter of recommendation for Stephen Redding. He has provided IT service at our dental practice for many years. Not only does Stephen bring the knowledge necessary to handle all of our IT needs, we appreciate his ability to communicate in a pleasant and professional manner. He is able to explain the problem, provide a solution, and then promptly follows up after the fact letting us know what he encountered and how he corrected the issue. He makes solid recommendations that will help us to avoid such issues in the future. We also appreciate that he is fast at his work. Because he has such vast knowledge, he does not have to work through trial and error to find the solution. He handles it and gets it done correctly the first time. This is not only time-saving and necessary for a busy practice who relies on cloud-based software, but money wise as well. I believe you would be very pleased to have him assist you with all of your IT needs.
