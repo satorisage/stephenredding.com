@@ -3,7 +3,7 @@ title: "Personal Coaching"
 og_description: "Personal Coaching"
 image: "/images/services/coach.webp"
 image_pos: "object-[50%_10%]"
-price: "$200 / 90 minute session"
+price: "Per-session or Package of Sessions"
 weight: 10
 enable: true
 draft: false
@@ -14,5 +14,5 @@ Our work is about helping you realize that the answers you seek are already with
 
 A typical session might start with a conversation about what is currently on your mind. We might explore a particular challenge you're facing or reflect on recurring patterns that you want to understand better. The goal is always to help you see yourself more clearly, without the weight of false stories or limiting beliefs. My role is to guide and support you through this process. In my own life, realizing the agency I have to understand my mind and its role in my experience has made a significant impact, leading to inner harmony and peace. I aim to support you in discovering this within yourself.
 
-If this resonates with you, I invite you to reach out for a free 15-minute connection session to explore if we're a good fit for this journey together.
+If this resonates with you, I invite you to [reach out for a free 30-minute connection session](https://calendar.app.google/Fbi48j36LYZd4LZZ8) to explore how I can best be of service to you.
 
