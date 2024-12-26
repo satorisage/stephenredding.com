@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="mx-auto prose prose-lg">
+    {{ if .Params.image }}
+    <img
+        src="{{ .Params.image }}"
+        alt="{{ .Title }}"
+        class="mb-4 w-full h-64 object-cover {{ with .Params.image_pos }}{{ . }}{{ end }}"
+    />
+    {{ end }}
+    <h1 class="text-3xl font-bold">{{ .Title }}</h1>
+
+    <div class="mt-4">{{ .Content }}</div>
+</article>
+{{ end }}

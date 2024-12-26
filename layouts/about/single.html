@@ -1,0 +1,15 @@
+{{ define "main" }}
+<!-- Profile Image (visible only on smaller screens) -->
+<div class="lg:hidden mb-6 flex justify-center">
+    <img
+        src="/images/me.jpg"
+        alt="Stephen Redding"
+        class="w-38 h-38 rounded-full object-cover shadow-lg"
+    />
+</div>
+
+<article class="mx-auto prose prose-lg">
+    <h1 class="text-3xl font-bold mb-6 text-center">{{ .Title }}</h1>
+    {{ .Content }}
+</article>
+{{ end }}

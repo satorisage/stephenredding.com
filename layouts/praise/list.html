@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
+<article class="prose prose-lg max-w-none">{{ .Content }}</article>
+
+<div class="grid grid-cols-1 gap-12 mt-8">
+    <div class="praise-category">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Loop through all pages within this category -->
+            {{ range .Pages }}
+            <article class="prose p-4 bg-white shadow-md rounded">
+                <h3 class="text-xl font-semibold">{{ .Params.person }}</h3>
+                <p class="text-gray-700">{{ .Summary }}</p>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

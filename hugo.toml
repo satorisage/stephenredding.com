@@ -1,18 +1,7 @@
-baseURL = 'https://www.stephenredding.com/'
+baseURL = 'https://stephenredding.com/'
 languageCode = 'en-us'
 title = 'Stephen Redding'
-theme = 'tailfolio'
 canonifyURLs = true
 
-
 [params]
-  css = "css/tailwind.css"
-
-[build]
-  writeStats = true
-  useResourceCacheWhen = "always"
-
-[markup]
-  [markup.postcss]
-    enable = true
-    config = "postcss.config.js"
+css = "css/tailwind.css"

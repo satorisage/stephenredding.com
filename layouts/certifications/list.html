@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article class="mx-auto prose prose-lg">
+    <h1 class="text-3xl font-bold mb-4 text-center">{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {{ range .Pages }} {{ if .Params.enable }}
+        <div class="border rounded-lg shadow-lg overflow-hidden">
+            <a href="{{ .Permalink }}" class="block">
+                {{ if .Params.image }}
+                <div
+                    class="w-full h-48 flex items-center justify-center bg-white"
+                >
+                    <img
+                        src="{{ .Params.image }}"
+                        alt="{{ .Title }}"
+                        class="object-contain w-auto h-full"
+                    />
+                </div>
+                {{ end }}
+
+                <!-- Certification Title -->
+                <div class="pt-1">
+                    <h2 class="text-lg font-semibold text-center m-0 p-2">
+                        {{ .Title }}
+                    </h2>
+                </div>
+            </a>
+        </div>
+        {{ end }} {{ end }}
+    </div>
+</article>
+{{ end }}
