@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "concurrently \"hugo serve\" \"npx tailwindcss -i ./assets/css/tailwind.css -o ./static/css/tailwind.css --watch\"",
+    "dev": "concurrently \"hugo serve\" \"npx tailwindcss -i ./assets/css/tailwind.css -o ./static/css/tailwind.css  --config ./tailwind.config.js --watch\"",
     "build:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./static/css/tailwind.css --minify",
     "build:site": "npm run build:css && hugo"
   },

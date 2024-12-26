@@ -5,14 +5,12 @@
 
         {{ range .Pages }}
             {{ if .Params.enable }}
-            <div class="mx-auto border rounded-lg shadow-lg overflow-hidden justify-between">
+            <div class="mx-auto border shadow-lg rounded-lg justify-between">
                 <a href="{{ .Permalink }}" class="block">
                     {{ if .Params.image }}
                     <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-96 object-cover {{ if and (.Params.image_pos) (ne .Params.image_pos "auto") }} {{ .Params.image_pos }} {{ end }}">
                     {{ end }}
-                    <div class="text-center">
-                        <h2 class="text-lg font-semibold">{{ .Title }}</h2>
-                    </div>
+                    <h2 class="text-lg font-semibold text-center">{{ .Title }}</h2>
                 </a>
             </div>
             {{ end }}
