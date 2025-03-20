@@ -1,5 +1,9 @@
 ---
 title: "Certifications"
+category_weights:
+  Life Transformation Coaching: 1
+  Practitioner of NLP: 2
+  Master Practitioner of NLP: 3
 og_description: "Coaching Certifications"
 weight: 30
 enable: true

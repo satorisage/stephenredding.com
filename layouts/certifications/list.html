@@ -2,31 +2,46 @@
 <article class="mx-auto prose prose-lg">
     <h1 class="text-3xl font-bold mb-4 text-center">{{ .Title }}</h1>
     {{ .Content }}
-    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {{ range .Pages }} {{ if .Params.enable }}
-        <div class="border rounded-lg shadow-lg overflow-hidden">
-            <a href="{{ .Permalink }}" class="block">
-                {{ if .Params.image }}
-                <div
-                    class="w-full h-48 flex items-center justify-center bg-white"
-                >
-                    <img
-                        src="{{ .Params.image }}"
-                        alt="{{ .Title }}"
-                        class="object-contain w-auto h-full"
-                    />
+
+    {{ $categoryWeights := .Params.category_weights }}
+    {{ $categories := slice }}
+
+    {{ range .Pages }}
+        {{ if .Params.enable }}
+            {{ $categories = $categories | append .Params.category }}
+        {{ end }}
+    {{ end }}
+    {{ $categories = $categories | uniq }}
+
+    <!-- Sort categories based on defined weights -->
+    {{ $sortedCategories := sort $categories }}
+    {{ if $categoryWeights }}
+        {{ $sortedCategories = sort $categories "value" "asc" (apply $categories "index" $categoryWeights ".") }}
+    {{ end }}
+
+    <div class="mt-4">
+        {{ range $sortedCategories }}
+        <h2 class="text-2xl font-bold mt-6 mb-2">{{ . }}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {{ range where $.Pages "Params.category" . }}
+                {{ if .Params.enable }}
+                <div class="border rounded-lg shadow-lg overflow-hidden">
+                    {{ if .Params.image }}
+                    <a href="{{ .Permalink }}" class="block">
+                        <div class="inline-flex items-center justify-center bg-white w-auto overflow-hidden">
+                            <img
+                                src="{{ .Params.image }}"
+                                alt="{{ .Title }}"
+                                class="object-contain w-auto h-auto block m-0 p-2"
+                            />
+                        </div>
+                    </a>
+                    {{ end }}
                 </div>
                 {{ end }}
-
-                <!-- Certification Title -->
-                <div class="pt-1">
-                    <h2 class="text-lg font-semibold text-center m-0 p-2">
-                        {{ .Title }}
-                    </h2>
-                </div>
-            </a>
+            {{ end }}
         </div>
-        {{ end }} {{ end }}
+        {{ end }}
     </div>
 </article>
 {{ end }}
