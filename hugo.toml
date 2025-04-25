@@ -5,3 +5,8 @@ canonifyURLs = true
 
 [params]
 css = "css/tailwind.css"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true

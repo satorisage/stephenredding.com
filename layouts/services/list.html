@@ -1,19 +1,41 @@
 {{ define "main" }}
-    <article class="mx-auto prose prose-lg">
-        <h1 class="text-3xl font-bold mb-4 text-center">{{ .Title }}</h1>
+    <article class="mx-auto prose prose-lg max-w-4xl">
+        <h1 class="text-3xl font-bold mb-8 text-center text-slate-800">{{ .Title }}</h1>
         {{ .Content }}
 
-        {{ range .Pages }}
-            {{ if .Params.enable }}
-            <div class="mx-auto border shadow-lg rounded-lg justify-between">
-                <a href="{{ .Permalink }}" class="block">
-                    {{ if .Params.image }}
-                    <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-96 object-cover {{ if and (.Params.image_pos) (ne .Params.image_pos "auto") }} {{ .Params.image_pos }} {{ end }}">
-                    {{ end }}
-                    <h2 class="text-lg font-semibold text-center">{{ .Title }}</h2>
-                </a>
-            </div>
+        {{ $enabledPages := where .Pages ".Params.enable" true }}
+        {{ $cardCount := len $enabledPages }}
+
+        <div class="not-prose grid gap-8 mt-12 {{ if eq $cardCount 1 }}justify-center{{ else if gt $cardCount 1 }}md:grid-cols-2{{ end }}">
+            {{ range $enabledPages }}
+                <div class="w-full {{ if eq $cardCount 1 }}min-w-[20rem] sm:w-[24rem] md:w-[26rem]{{ else }}min-w-0{{ end }} group relative bg-white border border-slate-100 rounded-xl shadow-[0_2px_8px_-1px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden hover:border-slate-200">
+                    <a href="{{ .Permalink }}" class="h-full flex flex-col">
+                        {{ if .Params.image }}
+                        <div class="flex-1 max-h-64 overflow-hidden bg-white">
+                            <img
+                                src="{{ .Params.image }}"
+                                alt="{{ .Title }}"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] {{ with .Params.image_pos }}{{ . }}{{ end }}"
+                                loading="lazy"
+                            >
+                        </div>
+                        {{ else }}
+                        <div class="flex-1 max-h-64 bg-white flex items-center justify-center p-4">
+                            {{/* SVG Selection */}}
+                            {{ $svg := .Params.svg | default "coaching" }}
+                            {{ partial (printf "svgs/%s.html" $svg) . }}
+                        </div>
+                        {{ end }}
+
+                        <div class="p-2 flex-0 bg-white/90 backdrop-blur-sm">
+                            <h2 class="text-center text-xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">{{ .Title }}</h2>
+                            {{ if .Description }}
+                            <p class="text-slate-600 mb-4">{{ .Description }}</p>
+                            {{ end }}
+                        </div>
+                    </a>
+                </div>
             {{ end }}
-        {{ end }}
+        </div>
     </article>
 {{ end }}

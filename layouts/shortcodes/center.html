@@ -1,0 +1,3 @@
+<div class="not-prose flex justify-center {{ with .Get "max" }}max-w-{{ . }}{{ else }}max-w-prose{{ end }} mx-auto {{ .Get "class" }}">
+  {{ .Inner | markdownify }}
+</div>

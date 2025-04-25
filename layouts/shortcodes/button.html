@@ -1,0 +1,32 @@
+{{/* Allowed colors */}}
+{{ $colorMap := dict
+  "indigo" (dict
+    "bg" "bg-indigo-600"
+    "hover" "hover:bg-indigo-700"
+    "text" "text-white"
+    "focus" "focus:ring-indigo-500"
+  )
+  "white" (dict
+    "bg" "bg-white"
+    "hover" "hover:bg-gray-50"
+    "text" "text-gray-800"
+    "focus" "focus:ring-indigo-500"
+    "border" "border border-gray-300"
+  )
+}}
+
+{{/* Get color config */}}
+{{ $bg := .Get "bg" | default "indigo" }}
+{{ $color := index $colorMap $bg }}
+{{ $focusColor := index $colorMap (.Get "focus" | default $bg) }}
+
+<div class="not-prose">
+<a href="{{ .Get "href" }}"
+   class="inline-flex items-center px-5 py-3 font-medium rounded-lg shadow transition-all duration-200
+          {{ $color.bg }} {{ $color.text }} {{ $color.hover }} {{ $color.border | default "" }}
+          focus:outline-none focus:ring-2 {{ $focusColor.focus }} focus:ring-offset-2
+          {{ .Get "class" }}">
+  {{ .Get "text" }}
+  {{ if .Get "icon" }}<span class="ml-2">{{ partial (printf "icons/%s.html" (.Get "icon")) }}</span>{{ end }}
+</a>
+</div>

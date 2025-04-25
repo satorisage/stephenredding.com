@@ -4,8 +4,29 @@ og_description: "Helping you discover self-empowerment and achieve meaningful ch
 enable: true
 draft: false
 ---
-Hi, I’m Stephen. Over the years, I’ve dedicated myself to understanding the mind and how our beliefs shape the way we experience life. This journey has been one of deep exploration and growth, leading to insights I now use to support others.
+Hi, I’m Stephen. I help people who feel stuck, burdened by guilt, or disconnected from their true selves reconnect with who they *really* are — beyond conditioning, fear, and spiritual confusion.
 
-Here, you’ll find the services I offer to guide you toward greater clarity and self-empowerment, along with the certifications that reflect my dedication to mastering the skills needed to support meaningful transformation in others.
+Through deep insight, practical tools, and Spirit-centered coaching, I’ll guide you to clarity, confidence, and lasting peace.
 
-Take a look around, explore what I do, and let me know if you'd like to work together.
+### What I Offer
+
+- 1:1 Coaching
+- Identity Reset (7-Day Journey)
+- Group Support & Teachings
+
+{{< button-group align="center" >}}
+  {{< button
+    href="/contact"
+    text="Book a Discovery Call"
+    bg="indigo"
+    focus="indigo"
+    class="mt-6"
+  >}}
+  {{< button
+    href="/services"
+    text="View Services"
+    bg="white"
+    focus="indigo"
+    class="mt-6"
+  >}}
+{{< /button-group >}}

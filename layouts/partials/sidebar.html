@@ -1,4 +1,4 @@
-<aside class="w-64 bg-gray-800 text-white font-semibold hidden items-center text-xl lg:flex flex-col flex-shrink-0">
+<aside class="w-64 bg-slate-900 text-white font-semibold hidden items-center text-xl lg:flex flex-col flex-shrink-0">
   <!-- Site Title -->
   <div class="p-4">
     {{ .Site.Title }}
@@ -13,7 +13,7 @@
     <ul>
       <!-- Home link -->
       <li class="mb-2">
-        <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink "/" }}bg-gray-700{{ end }}">Home</a>
+        <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-slate-700 {{ if eq .Permalink "/" }}bg-slate-700{{ end }}">Home</a>
       </li>
 
       <!-- Collect top-level standalone pages and section index pages -->
@@ -29,7 +29,7 @@
       {{ range sort $pages "Weight" }}
         {{ if .Params.enable }}
           <li class="mb-2">
-            <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-gray-700 {{ if eq .Permalink $.Permalink }}bg-gray-700{{ end }}">
+            <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-slate-700 {{ if eq .Permalink $.Permalink }}bg-slate-700{{ end }}">
               {{ .Title }}
             </a>
           </li>

@@ -5,18 +5,16 @@ og_description: "About Me"
 type: "about"
 layout: "single"
 enable: true
-weight: 40
+weight: 20
 ---
-A profound sense of purpose has always been with me—a memory, perhaps, of a time before coming to this world, where I saw a need to help others understand something vital. It feels as though I chose to come here to offer that support, and this has shaped the way I see my journey.
+From an early age, I felt a profound sense of purpose—a deep inner knowing that I was here to help others reconnect with something essential they’d forgotten. Raised in a Catholic environment where questioning was discouraged, I rebelled—not against spirituality, but against the idea that truth shouldn’t be explored. This rebellion ignited a lifelong exploration into how our beliefs shape our reality.
 
-From an early age, I felt a deeper truth within me, one that often seemed at odds with the world around me. Raised in a Catholic environment where questioning beliefs was discouraged, I rebelled against the notion that truth should never be examined. This rebellion fueled my curiosity and a lifelong exploration of how our beliefs create our reality. Perhaps the friction I experienced was essential—it helped me understand why so many have forgotten the power of their own minds.
+Throughout my journey, I sought transformation through many external tools: nutrition, chemistry, spiritual practices, and various frameworks. However, the true shift happened when I realized the power wasn’t in the tools themselves—it was in my relationship to them, driven by the beliefs and thoughts I held.
 
-My work with complex IT systems further illuminated this. Computers operate on code, with processes that sometimes glitch or hang. By examining those glitches, we can understand where things are getting stuck. I began to see parallels in how the mind operates—our thoughts and beliefs are the programs, and understanding their inner mechanics allows us to uncover what’s holding us back.
+Working with complex IT systems deepened this understanding. Like glitches in software reveal underlying coding errors, internal struggles reflect hidden patterns in our mental programming. Our thoughts and beliefs operate like inner code, shaping every aspect of our experience. By identifying these inner patterns, we reclaim the ability to rewrite our own reality.
 
-I’ve explored many external tools—diets, chemicals, and spiritual frameworks—seeking ways to transform myself. But the deeper realization came when I saw it wasn’t the tools themselves that held the key. Instead, it was my relationship with them, the thoughts and beliefs I brought to them, that shaped the results. This is something I’m still refining in my own understanding, but it underscores the profound connection between the mind and the outcomes we experience.
+The deeper realization came clearly: transformation isn’t about becoming something new; it’s about remembering and reconnecting with who we truly are. Many of the beliefs we carry—about guilt, shame, unworthiness—were never our own but were absorbed unconsciously from external influences. Recognizing this is liberating: we’re not broken; we’ve just been programmed by beliefs that don’t reflect our true essence.
 
-The way we see the world—the vision we hold—shapes everything. If we focus only on fear or failure, it becomes our reality. But when we hold a vision of peace, safety, and possibility, we naturally move toward it. It’s not about ignoring challenges but about aligning our thoughts with the outcomes we want.
+Real transformation comes from within. It’s about consciously aligning our internal vision with the reality we desire—one grounded in peace, empowerment, and clarity. The barriers we perceive are rarely as solid as they seem. My passion lies in guiding others to dismantle these false barriers and rediscover their inherent power and truth.
 
-At its core, transformation is about self-empowerment. It’s not about becoming something new but about recognizing the inherent power we already possess and shedding the false ideas that obscure it. It’s like breaking through a glass ceiling—realizing the barriers were never as solid as they seemed. My passion lies in helping others recognize this truth and take charge of their lives. The shift isn’t about changing what we are but choosing how we perceive ourselves and our potential.
-
-The true source of this power lies within each of us, waiting to be acknowledged and directed. Through reframing our thoughts and aligning them with what we truly want, we can unlock a transformation far greater than we often realize.
+Everything you seek—clarity, peace, joy—is already within you. My purpose is to help you see clearly, shed false identities, and confidently step into who you truly are.
