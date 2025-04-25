@@ -11,8 +11,8 @@ Through deep insight, practical tools, and Spirit-centered coaching, I’ll guid
 ### What I Offer
 
 - 1:1 Coaching
-- Identity Reset (7-Day Journey)
-- Group Support & Teachings
+- Identity Reset (7-Day Journey) - Coming soon!
+- Communication Support
 
 {{< button-group align="center" >}}
   {{< button
