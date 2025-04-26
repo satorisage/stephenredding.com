@@ -1,9 +1,10 @@
 ---
 title: "Communicate with Confidence"
+description: "Couples and Groups"
 og_description: "Communicate with Confidence"
 svg: "team"
-weight: 30
-enable: false
+weight: 20
+enable: true
 draft: false
 ---
 Structured group sessions designed to help individuals and teams overcome communication barriers. Learn practical tools to express yourself clearly, navigate difficult conversations, and build deeper connections—whether in relationships, workplaces, or social settings.

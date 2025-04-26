@@ -1,6 +1,6 @@
 ---
 title: "Services"
-og_description: "My services and offerings"
+og_description: "Personalized coaching to help you cultivate inner peace, align with your values, and navigate life with clarity, confidence, and deeper self-connection."
 enable: true
 weight: 30
 ---

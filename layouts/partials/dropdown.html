@@ -3,7 +3,7 @@
   <ul>
     <!-- Home link -->
     <li class="mb-2">
-      <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-slate-700 {{ if eq .Permalink "/" }}bg-slate-700{{ end }}">
+      <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-indigo-700 {{ if eq .Permalink "/" }}bg-slate-700{{ end }}">
         Home
       </a>
     </li>
@@ -21,7 +21,7 @@
     {{ range sort $pages "Weight" }}
       {{ if .Params.enable }}
         <li class="mb-2">
-          <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-slate-700 {{ if eq .Permalink $.Permalink }}bg-slate-700{{ end }}">
+          <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-indigo-700 {{ if eq .Permalink $.Permalink }}bg-indigo-700{{ end }}">
             {{ .Title }}
           </a>
         </li>
