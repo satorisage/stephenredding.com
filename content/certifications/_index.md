@@ -4,6 +4,7 @@ category_weights:
   Life Transformation Coaching: 1
   Practitioner of NLP: 2
   Master Practitioner of NLP: 3
+  Mental Health Coaching: 4
 og_description: "Coaching Certifications"
 weight: 40
 enable: true

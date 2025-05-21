@@ -14,16 +14,20 @@
     {{ $categories = $categories | uniq }}
 
     <!-- Sort categories based on defined weights -->
-    {{ $sortedCategories := sort $categories }}
-    {{ if $categoryWeights }}
-        {{ $sortedCategories = sort $categories "value" "asc" (apply $categories "index" $categoryWeights ".") }}
+    {{ $categoryData := slice }}
+    {{ range $categories }}
+      {{ $weight := index $categoryWeights . | default 999 }} <!-- default fallback if no weight defined -->
+      {{ $categoryData = $categoryData | append (dict "name" . "weight" $weight) }}
     {{ end }}
 
+    {{ $sortedCategoryData := sort $categoryData "weight" "asc" }}
+
     <div class="mt-4">
-        {{ range $sortedCategories }}
-        <h2 class="text-2xl font-bold mt-6 mb-2">{{ . }}</h2>
+        {{ range $sortedCategoryData }}
+          {{ $cat := .name }}
+        <h2 class="text-2xl font-bold mt-6 mb-2">{{ $cat }}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {{ range where $.Pages "Params.category" . }}
+            {{ range where $.Pages "Params.category" $cat }}
                 {{ if .Params.enable }}
                 <div class="border rounded-lg shadow-lg overflow-hidden">
                     {{ if .Params.image }}
