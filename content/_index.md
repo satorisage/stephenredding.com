@@ -12,7 +12,7 @@ Through deep insight, practical tools, and Spirit-centered coaching, we’ll wor
 
 - 1:1 Coaching
 - Communication with Confidence (Couples and Groups)
-- Identity Reset (7-Day Journey) - Coming soon!
+- How to Be a Better Listener (Group class)
 
 {{< button-group align="center" >}}
   {{< button
