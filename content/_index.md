@@ -12,7 +12,7 @@ Through deep insight, practical tools, and Spirit-centered coaching, we’ll wor
 
 - 1:1 Coaching
 - Communication with Confidence (Couples and Groups)
-- How to Be a Better Listener (Group class)
+- Listening for WHO within the WHAT (Group class)
 
 {{< button-group align="center" >}}
   {{< button
