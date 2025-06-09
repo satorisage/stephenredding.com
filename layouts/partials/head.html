@@ -14,6 +14,6 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="website">
 
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<title>{{ printf "%s | %s" .Title site.Title }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}

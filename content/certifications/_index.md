@@ -6,9 +6,7 @@ category_weights:
   Master Practitioner of NLP: 3
   Mental Health Coaching: 4
 og_description: "Coaching Certifications"
-weight: 40
+weight: 20
 enable: true
 ---
-Each certification represents a step in my journey toward deeply understanding how personal transformation unfolds. They provide me with valuable tools and frameworks to hold safe, supportive spaces for others as they navigate their own paths toward clarity and empowerment.
-
-But these credentials aren’t the goal—they simply support the real work: helping you uncover the strength, wisdom, and truth already within yourself.
+Each of these certifications represents a step in my journey toward deeply understanding how personal transformation unfolds. They have provided me with valuable tools and frameworks to hold safe, supportive spaces for others as they navigate their own paths toward clarity and empowerment.

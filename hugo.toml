@@ -1,6 +1,6 @@
 baseURL = 'https://stephenredding.com/'
 languageCode = 'en-us'
-title = 'Stephen Redding'
+title = 'Stĕphen Redding'
 canonifyURLs = true
 
 [params]

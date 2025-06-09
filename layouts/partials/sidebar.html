@@ -1,7 +1,7 @@
 <aside class="w-64 bg-slate-900 text-white font-semibold hidden items-center text-xl lg:flex flex-col flex-shrink-0">
   <!-- Site Title -->
   <div class="p-4">
-    {{ .Site.Title }}
+      {{ .Site.Home.Params.name }}
   </div>
   <!-- Profile Image -->
   <div class="mb-6">
@@ -13,7 +13,7 @@
     <ul>
       <!-- Home link -->
       <li class="mb-2">
-        <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-indigo-700 {{ if .IsHome }}bg-indigo-700{{ end }}">Home</a>
+        <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-indigo-700 {{ if .IsHome }}bg-indigo-700{{ end }}">About</a>
       </li>
 
       <!-- Collect top-level standalone pages and section index pages -->
@@ -37,4 +37,5 @@
       {{ end }}
     </ul>
   </nav>
+  {{ partial "social-links.html" . }}
 </aside>

@@ -4,7 +4,7 @@
     <!-- Home link -->
     <li class="mb-2">
       <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-indigo-700 {{ if .IsHome }}bg-indigo-700{{ end }}">
-        Home
+          About
       </a>
     </li>
 
@@ -28,4 +28,7 @@
       {{ end }}
     {{ end }}
   </ul>
+  <div class="mb-2">
+      {{ partial "social-links.html" . }}
+  </div>
 </div>

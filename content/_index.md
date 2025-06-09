@@ -1,32 +1,15 @@
 ---
-title: "Welcome!"
-og_description: "Helping you reconnect with your true self beyond fear, guilt, and old beliefs — through Spirit-centered coaching, clarity, and lasting empowerment."
+title: "About"
+heading: "Hi, I go by Stěphen."
+name: "Stĕphen Redding"
+og_description: "Self-Awareness Coach"
 enable: true
 draft: false
 ---
-Hi, I’m Stephen. I help people who feel stuck, burdened by guilt, or disconnected from their true selves reconnect with who they *really* are — beyond conditioning, fear, and spiritual confusion.
+I help people reconnect with the truth of who they are — beyond fear, shame, and the old beliefs that have clouded their identity.
 
-Through deep insight, practical tools, and Spirit-centered coaching, we’ll work together to awaken the clarity, confidence, and lasting peace already within you.
+Through my own journey of questioning, unlearning, and deep inner work, I discovered that real transformation isn’t about becoming something new — it’s about remembering who you’ve always been.
 
-### What I Offer
+We’re not broken — we’ve been programmed by false ideas.
 
-- 1:1 Coaching
-- Communication with Confidence (Couples and Groups)
-- Listening for WHO within the WHAT (Group class)
-
-{{< button-group align="center" >}}
-  {{< button
-    href="/contact"
-    text="Book a Discovery Call"
-    bg="indigo"
-    focus="indigo"
-    class="mt-6"
-  >}}
-  {{< button
-    href="/services"
-    text="View Services"
-    bg="white"
-    focus="indigo"
-    class="mt-6"
-  >}}
-{{< /button-group >}}
+My role is to help you clear the noise, reclaim your agency, and live from the clarity, peace, and freedom already within you.
