@@ -26,10 +26,10 @@
         {{ range $sortedCategoryData }}
           {{ $cat := .name }}
         <h2 class="text-2xl font-bold mt-6 mb-2">{{ $cat }}</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
             {{ range where $.Pages "Params.category" $cat }}
                 {{ if .Params.enable }}
-                <div class="border rounded-lg shadow-lg overflow-hidden">
+                <div class="border rounded-lg shadow-lg overflow-hidden p-3">
                     {{ if .Params.image }}
                     <a href="{{ .Permalink }}" class="block">
                         <div class="inline-flex items-center justify-center bg-white w-auto overflow-hidden">
