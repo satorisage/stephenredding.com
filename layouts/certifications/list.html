@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article class="mx-auto prose prose-lg">
-    <h1 class="text-3xl font-bold mb-4 text-center">{{ .Title }}</h1>
+    <h1 class="{{ .Site.Data.theme.colors.headingText }} text-3xl font-bold mb-4 text-center">{{ .Title }}</h1>
     {{ .Content }}
 
     {{ $categoryWeights := .Params.category_weights }}
@@ -25,14 +25,14 @@
     <div class="mt-4">
         {{ range $sortedCategoryData }}
           {{ $cat := .name }}
-        <h2 class="text-2xl font-bold mt-6 mb-2">{{ $cat }}</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
+        <h2 class="{{ site.Data.theme.colors.headingText }} text-2xl font-bold mt-6 mb-2">{{ $cat }}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-2">
             {{ range where $.Pages "Params.category" $cat }}
                 {{ if .Params.enable }}
-                <div class="border rounded-lg shadow-lg overflow-hidden p-3">
+                <div class="border rounded-lg shadow-lg overflow-hidden p-2 {{ .Site.Data.theme.colors.cardBG }} {{ .Site.Data.theme.colors.cardHoverBG }}">
                     {{ if .Params.image }}
                     <a href="{{ .Permalink }}" class="block">
-                        <div class="inline-flex items-center justify-center bg-white w-auto overflow-hidden">
+                        <div class="inline-flex items-center justify-center w-auto overflow-hidden">
                             <img
                                 src="{{ .Params.image }}"
                                 alt="{{ .Title }}"

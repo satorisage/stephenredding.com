@@ -1,34 +1,28 @@
 <!-- Dropdown Menu -->
-<div id="dropdownMenu" class="absolute right-0 mt-2 p-2 w-48 bg-slate-900 text-white rounded-lg shadow-xl hidden">
-  <ul>
+<div id="dropdownMenu" class="{{ .Site.Data.theme.colors.menuBG }} {{ .Site.Data.theme.colors.menuText }} absolute right-0 mt-6 p-2 w-48 rounded-lg shadow-xl hidden justify-center z-10">
+  <ul class="mx-auto">
     <!-- Home link -->
     <li class="mb-2">
-      <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-indigo-700 {{ if .IsHome }}bg-indigo-700{{ end }}">
+      <a
+          href="{{ "/" | absURL }}"
+          class="block p-2 rounded hover:rounded {{ .Site.Data.theme.colors.menuHoverText }}
+          {{ if .IsHome }}{{ .Site.Data.theme.colors.menuActiveText }}{{ end }}"
+      >
           About
       </a>
     </li>
-
-    <!-- Collect top-level standalone pages and section index pages -->
     {{ $pages := slice }}
-
-    <!-- Collect standalone pages (not inside a section) -->
     {{ $pages = $pages | append (where .Site.RegularPages "Section" "" ) }}
-
-    <!-- Collect section index pages (_index.md in folders) -->
     {{ $pages = $pages | append .Site.Sections.ByWeight }}
-
-    <!-- Sort the collected pages by weight -->
     {{ range sort $pages "Weight" }}
       {{ if .Params.enable }}
         <li class="mb-2">
-          <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-indigo-700 {{ if eq .Permalink $.Permalink }}bg-indigo-700{{ end }}">
+          <a href="{{ .Permalink }}" class="block p-2 rounded hover:rounded {{ .Site.Data.theme.colors.menuHoverText }} {{ if eq .Permalink $.Permalink }}{{ .Site.Data.theme.colors.menuActiveText }}{{ end }}">
             {{ .Title }}
           </a>
         </li>
       {{ end }}
     {{ end }}
+    <li>{{ partial "social-links.html" . }}</li>
   </ul>
-  <div class="mb-2">
-      {{ partial "social-links.html" . }}
-  </div>
 </div>

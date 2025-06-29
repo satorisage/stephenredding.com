@@ -1,6 +1,9 @@
 {{ define "main" }}
 <article class="mx-auto prose prose-lg">
-    <h1 class="text-3xl font-bold mb-4 text-center">{{ .Title }}</h1>
+    <h1 class="{{ .Site.Data.theme.colors.headingText }} text-3xl font-bold mb-4 text-center">{{ .Title }}</h1>
     {{ .Content }}
+    <p class="{{ .Site.Data.theme.colors.siteText }} text-center">
+        <a class="{{ .Site.Data.theme.colors.linkHoverText }}" href="mailto:{{ .Params.email }}">{{ .Params.email }}</a>
+    </p>
 </article>
 {{ end }}

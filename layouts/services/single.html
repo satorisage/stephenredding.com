@@ -7,7 +7,7 @@
         class="mb-4 w-full h-64 object-cover {{ with .Params.image_pos }}{{ . }}{{ end }}"
     />
     {{ end }}
-    <h1 class="text-3xl font-bold">{{ .Title }}</h1>
+    <h1 class="{{ .Site.Data.theme.colors.headingText }} text-3xl font-bold">{{ .Title }}</h1>
 
     <div class="mt-4">{{ .Content }}</div>
 </article>

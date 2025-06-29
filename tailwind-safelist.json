@@ -1,0 +1,17 @@
+[
+  "bg-cyan-100",
+  "bg-cyan-200",
+  "bg-cyan-400",
+  "bg-cyan-600",
+  "group-hover:bg-fuchsia-700",
+  "group-hover:text-fuchsia-900",
+  "hover:bg-fuchsia-100",
+  "hover:text-cyan-900",
+  "hover:text-fuchsia-700",
+  "hover:text-white/100",
+  "text-cyan-600",
+  "text-cyan-800",
+  "text-cyan-900",
+  "text-white",
+  "text-white/80"
+]

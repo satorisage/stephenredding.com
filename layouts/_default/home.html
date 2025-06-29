@@ -9,7 +9,7 @@
 </div>
 
 <article class="mx-auto prose prose-lg prose-blue">
-    <h1 class="text-3xl font-bold mb-6 text-center">{{ .Params.Heading }}</h1>
+    <h1 class="{{ .Site.Data.theme.colors.headingText }} text-3xl font-bold mb-6 text-center">{{ .Params.Heading }}</h1>
     {{ .Content }}
 </article>
 {{ end }}

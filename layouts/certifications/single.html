@@ -1,6 +1,6 @@
 {{ define "main" }}
-<article class="mx-auto prose text-gray-700">
-    <h1 class="text-3xl font-bold text-center">{{ .Title }}</h1>
+<article class="mx-auto prose {{ .Site.Data.theme.colors.sitetext }}">
+    <h1 class="{{ .Site.Data.theme.colors.headingText }} text-3xl font-bold text-center">{{ .Title }}</h1>
     <div class="not-prose w-full m-0 p-0">
         <img
             src="{{ .Params.image }}"

@@ -1,6 +1,6 @@
-<aside class="w-64 bg-slate-900 text-white font-semibold hidden items-center text-xl lg:flex flex-col flex-shrink-0">
+<aside class="{{ .Site.Data.theme.colors.sidebarText }} {{ .Site.Data.theme.colors.sidebarBG }} w-64 font-semibold hidden items-center text-xl lg:flex flex-col flex-shrink-0 p-2">
   <!-- Site Title -->
-  <div class="p-4">
+  <div class="p-4 {{ .Site.Data.theme.colors.sidebarHeading }}">
       {{ .Site.Home.Params.name }}
   </div>
   <!-- Profile Image -->
@@ -13,7 +13,14 @@
     <ul>
       <!-- Home link -->
       <li class="mb-2">
-        <a href="{{ "/" | absURL }}" class="block p-2 rounded hover:bg-indigo-700 {{ if .IsHome }}bg-indigo-700{{ end }}">About</a>
+        <a
+            href="{{ "/" | absURL }}"
+            class="block p-2 rounded
+            {{ .Site.Data.theme.colors.sidebarHoverText }}
+            {{ if .IsHome }}
+              {{ .Site.Data.theme.colors.sidebarActiveText }} underline  font-semibold
+            {{ end }}"
+        >About</a>
       </li>
 
       <!-- Collect top-level standalone pages and section index pages -->
@@ -29,13 +36,20 @@
       {{ range sort $pages "Weight" }}
         {{ if .Params.enable }}
           <li class="mb-2">
-            <a href="{{ .Permalink }}" class="block p-2 rounded hover:bg-indigo-700 {{ if eq .Permalink $.Permalink }}bg-indigo-700{{ end }}">
+            <a
+                href="{{ .Permalink }}"
+                class="block p-2 rounded
+                {{ .Site.Data.theme.colors.sidebarHoverText }}
+                {{ if eq .Permalink $.Permalink }}
+                  {{ .Site.Data.theme.colors.sidebarActiveText }} underline  font-semibold
+                {{ end }}"
+            >
               {{ .Title }}
             </a>
           </li>
         {{ end }}
       {{ end }}
+      <li>{{ partial "social-links.html" . }}</li>
     </ul>
   </nav>
-  {{ partial "social-links.html" . }}
 </aside>

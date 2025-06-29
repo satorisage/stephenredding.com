@@ -1,11 +1,12 @@
-<ul role="list" class="flex items-center space-x-4">
+<div class="flex justify-center items-center">
   {{ range site.Data.social.social }}
-    <li class="mt-4 flex">
-      <a class="text-white" href="{{ .url }}">
-        <span class="h-6 w-6 flex overflow-hidden justify-center align-middle {{ if eq .name "Facebook" }}relative top-[-2px]{{ end }}">
-          {{ .svg | safeHTML }}
+    <a
+        href="{{ .url }}"
+        aria-label="{{ .name }}"
+    >
+        <span class="{{ site.Data.theme.colors.socialHover }} h-10 w-10 flex items-center justify-center rounded-full hover:rounded-full">
+          {{ replace .svg "<svg" "<svg class='w-6 h-6'" | safeHTML }}
         </span>
-      </a>
-    </li>
+    </a>
   {{ end }}
-</ul>
+</div>

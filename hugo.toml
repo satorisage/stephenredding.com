@@ -4,7 +4,7 @@ title = 'Stĕphen Redding'
 canonifyURLs = true
 
 [params]
-css = "css/tailwind.css"
+  css = "css/tailwind.css"
 
 [markup]
   [markup.goldmark]
