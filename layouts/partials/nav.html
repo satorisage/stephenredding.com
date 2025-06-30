@@ -1,7 +1,7 @@
 <div class="{{ .Site.Data.theme.colors.sidebarBG }} flex justify-between items-center lg:hidden text-white text-xl font-semibold p-4">
     {{ .Site.Home.Params.name }}
     <div class="relative">
-        <button class="{{ .Site.Data.theme.colors.menuButtonBG }} text-white h-8 w-8 flex items-center justify-center rounded focus:outline-none {{ .Site.Data.theme.colors.hoverBG }}" onclick="toggleMenu()">
+        <button class="{{ .Site.Data.theme.colors.menuButtonBG }} text-white/80 h-8 w-8 flex items-center justify-center rounded focus:outline-none {{ .Site.Data.theme.colors.menuButtonHover }}" onclick="toggleMenu()">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M3 5h14a1 1 0 100-2H3a1 1 0 100 2zm14 4H3a1 1 0 000 2h14a1 1 0 000-2zm0 6H3a1 1 0 000 2h14a1 1 0 000-2z" clip-rule="evenodd" />
             </svg>

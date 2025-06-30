@@ -15,6 +15,7 @@
   "menuActiveText": "text-white",
   "menuHoverText": "hover:text-white/100",
   "menuButtonBG": "bg-cyan-600",
+  "menuButtonHover": "hover:text-white/100",
   "socialHover": "hover:text-white/100",
   "groupHoverBG": "group-hover:bg-fuchsia-700",
   "cardBG": "bg-cyan-200",
