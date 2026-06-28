@@ -1,10 +1,20 @@
 <script lang="ts">
 	import '$lib/styles/app.css';
+	import { page } from '$app/state';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import JsonLd from '$lib/components/JsonLd.svelte';
+	import Analytics from '$lib/components/Analytics.svelte';
+	import { canonical, siteJsonLd } from '$lib/seo';
 
 	let { children } = $props();
 </script>
+
+<svelte:head>
+	<link rel="canonical" href={canonical(page.url.pathname)} />
+</svelte:head>
+<JsonLd schema={siteJsonLd()} />
+<Analytics />
 
 <a class="skip-link" href="#main">Skip to content</a>
 <Nav />

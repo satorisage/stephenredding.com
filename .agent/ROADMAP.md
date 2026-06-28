@@ -21,8 +21,8 @@
 - [ ] **T6** Lead form — SvelteKit form action + Turnstile verification + Microsoft Graph email — depends: [T5]
       held: creds
       done-when: contact form posts to a `+page.server.ts` action that verifies Turnstile server-side and sends via Graph; validated locally with test creds; mailto fallback decided.
-- [ ] **T7** Conformance surface — robots.txt, sitemap.xml, canonical, JSON-LD, strict hashed CSP, Cloudflare Web Analytics — depends: [T5]
-      done-when: robots + sitemap emitted; canonical + JSON-LD on pages; CSP without `unsafe-inline` (allowlisting `static.cloudflareinsights.com`, `challenges.cloudflare.com`); analytics beacon wired via `PUBLIC_CF_ANALYTICS_TOKEN`.
+- [x] **T7** Conformance surface — robots.txt, sitemap.xml, canonical, JSON-LD, strict hashed CSP, Cloudflare Web Analytics — depends: [T5] — done: `static/robots.txt`; prerendered `sitemap.xml` endpoint (public pages only — excludes noindex praise + disabled service); per-page `<link rel=canonical>` + Person/WebSite JSON-LD site-wide and Service JSON-LD on detail pages (`$lib/seo` + JsonLd component); **strict hashed CSP** via `svelte.config.js` `kit.csp` (mode hash, no `unsafe-inline`, allowlists cloudflareinsights + challenges.cloudflare.com) — verified injected with script hash; CF Web Analytics beacon (`Analytics.svelte`, gated by `PUBLIC_CF_ANALYTICS_TOKEN` — omitted without token, present with). `svelte-check` 0 errors; build clean both with/without token.
+      done-when: robots + sitemap emitted; canonical + JSON-LD on pages; CSP without `unsafe-inline`; analytics beacon wired via `PUBLIC_CF_ANALYTICS_TOKEN` (token set at deploy / T8).
 - [ ] **T8** CI/deploy — `wrangler.jsonc` bindings/vars, GitHub Actions (check → build → `wrangler pages deploy`), secrets, custom domain — depends: [T6, T7]
       held: creds
       done-when: push to `main` builds + deploys to CF Pages; `stephenredding.com` serves the SvelteKit site over HTTPS; secrets set via `wrangler secret`/CI store.

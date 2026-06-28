@@ -14,7 +14,6 @@
 ## Now
 
 - [ ] Lead form — SvelteKit form action + Turnstile verification + Microsoft Graph email — source: ROADMAP M1.T6
-- [ ] Conformance surface — robots.txt, sitemap.xml, canonical, JSON-LD, strict hashed CSP, Cloudflare Web Analytics — source: ROADMAP M1.T7
 
 ## Next
 

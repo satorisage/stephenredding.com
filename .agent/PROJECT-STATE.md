@@ -1,14 +1,15 @@
 # Project State
 
 **Last updated:** 2026-06-28
-**Active focus:** M1 migration — **T1–T5 done. The full site is built and
-renders** (Luminous Calm theme): Nav/Footer, home, About, Services index +
-detail, Certifications credibility wall, Praise (empty-state), Contact (mailto
-for now). 8 pages prerendered, `svelte-check` 0 errors, all routes 200, disabled
-service 404s. **Ready: T6** (lead form — held:creds: Turnstile + Graph) and
-**T7** (conformance: robots/sitemap/JSON-LD/CSP/analytics — mostly creds-free;
-only the CF Analytics token is a cred). Remaining: T8 deploy (CF creds), T9
-remove Hugo (authorized), T10 verify.
+**Active focus:** M1 migration — **T1–T5 + T7 done.** Full site built (Luminous
+Calm); conformance surface shipped: robots, sitemap, canonical, Person/WebSite/
+Service JSON-LD, **strict hashed CSP** (`svelte.config.js` kit.csp), CF Web
+Analytics beacon gated by `PUBLIC_CF_ANALYTICS_TOKEN`. `svelte-check` 0 errors;
+prerender clean with/without token. **Sole ready task: T6 (lead form)** —
+held:creds, but the *code* can be built now (Turnstile widget + verify, Graph
+send via `platform.env`) with real values wired at deploy, same pattern as the
+analytics beacon. Then T8 deploy (CF creds), T9 remove Hugo (authorized), T10
+verify. Critical path is now cred-gated.
 
 ---
 

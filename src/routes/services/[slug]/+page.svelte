@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
+	import JsonLd from '$lib/components/JsonLd.svelte';
+	import { serviceJsonLd } from '$lib/seo';
 
 	let { data } = $props();
 	const service = $derived(data.service);
@@ -9,6 +12,13 @@
 	<title>{service.title} — Stĕphen Redding</title>
 	<meta name="description" content={service.summary} />
 </svelte:head>
+<JsonLd
+	schema={serviceJsonLd({
+		name: service.title,
+		description: service.summary,
+		pathname: page.url.pathname
+	})}
+/>
 
 <article class="section container">
 	<a class="back" href="/services">← All services</a>
