@@ -33,22 +33,22 @@ gh secret set CLOUDFLARE_ACCOUNT_ID     # paste account id from step 1
 gh variable set PUBLIC_CF_ANALYTICS_TOKEN   # CF Web Analytics site tag (public; empty ok for now)
 ```
 
-## 4. Lead-form email — Cloudflare Email Routing (`send_email` binding)
+## 4. Lead-form email — Resend (HTTP API)
 
-1. CF dashboard → the zone `stephenredding.com` → **Email Routing** → enable it
-   (adds the required MX/TXT records automatically when DNS is on Cloudflare).
-2. **Destination addresses** → add + **verify** the inbox where Discovery Call
-   requests should land (your Proton/personal address). The `send_email` binding
-   can only send to a *verified* destination.
-3. Set the form's from/to as CF Pages vars (or in `wrangler.jsonc`):
-   `EMAIL_FROM` = an on-zone address (e.g. `hello@stephenredding.com`),
-   `EMAIL_TO` = the verified destination from step 2.
-4. The `send_email` binding `SEB` is already declared in `wrangler.jsonc` — no
-   secret needed.
+(Cloudflare's `send_email` binding is Workers-only and Pages rejects it, so the
+form uses Resend — a plain HTTPS call from the Pages function.)
 
-Turnstile secret (the only encrypted secret) is set in step 5.
+1. Create a free account at resend.com.
+2. Add the domain `stephenredding.com` and **verify** it (Resend shows the DNS
+   records to add — SPF/DKIM). Until verified you can only send from
+   `onboarding@resend.dev` for testing.
+3. Create an API key.
+4. Set the secret + addresses on the Pages project:
 
 ```bash
+npx wrangler pages secret put RESEND_API_KEY --project-name stephenredding-com
+# EMAIL_FROM (verified sender) and EMAIL_TO (where requests land) are plain
+# vars — set in wrangler.jsonc or CF Pages → Settings → Variables.
 npx wrangler pages secret put TURNSTILE_SECRET_KEY --project-name stephenredding-com
 ```
 
