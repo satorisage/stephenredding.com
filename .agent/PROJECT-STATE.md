@@ -1,10 +1,12 @@
 # Project State
 
-**Last updated:** 2026-06-27
-**Active focus:** Just bootstrapped into the dotagent system. The work ahead is
-M1 — migrating stephenredding.com from Hugo to the fleet's SvelteKit + Svelte 5
-+ TypeScript + Cloudflare Pages stack, with a Turnstile+Graph lead form and
-sentinel-conformant public surface. No build work started yet.
+**Last updated:** 2026-06-28
+**Active focus:** M1 migration underway. **T1 (scaffold) done** — fresh
+SvelteKit + Svelte 5 runes + adapter-cloudflare project builds clean
+(`svelte-check` 0 errors, `vite build` → `.svelte-kit/cloudflare`, dev serves
+200). Hugo files left dormant as porting source (removal authorized for T9).
+Ready frontier: **T2** (typed content model) and **T4** (CSS-token "pop"
+theme — held:design, awaiting a ratified design direction).
 
 ---
 
@@ -51,8 +53,13 @@ Deferred work routes by kind. The one tracked deferral so far:
 
 ## 5. Next session
 
-Phase 3 = **code**: start the SvelteKit migration against the published
-`CLAUDE.md`. Clone fleet conventions from `risentech.net`/`font11a.io`
-(custom-CSS-token siblings) for the scaffold. Secrets needed at deploy time:
-`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `PUBLIC_CF_ANALYTICS_TOKEN`,
-Turnstile sitekey/secret, Microsoft Graph credentials.
+Continue M1. Two ready tasks:
+- **T2** — typed content model in `src/lib/content` (Service, Certification,
+  Praise, Profile). Design-independent; can proceed now. Sources: `content/`
+  + `data/social.toml` (Hugo, kept as reference).
+- **T4** — CSS-token "pop" theme. **Held on design**: the user wants a fresh,
+  striking, conversion-focused identity ("actually pop to someone wanting the
+  services") — align a design direction before building it.
+
+Secrets needed later (T6/T8): `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`,
+`PUBLIC_CF_ANALYTICS_TOKEN`, Turnstile sitekey/secret, Microsoft Graph creds.

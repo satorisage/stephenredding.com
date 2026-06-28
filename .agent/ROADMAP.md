@@ -8,8 +8,8 @@
 ### M1 — Hugo → SvelteKit/Cloudflare migration
 **Admitted:** 2026-06-28 · **Goal:** Re-platform stephenredding.com onto the fleet SvelteKit + Svelte 5 + TypeScript + Cloudflare Pages stack, with a Turnstile+Graph lead form and a sentinel-conformant public surface, preserving all existing content.
 
-- [ ] **T1** Scaffold SvelteKit + `adapter-cloudflare` project from a custom-CSS-token sibling (risentech.net / font11a.io) — source: PROJECT-SCOPE.md
-      done-when: `wrangler dev` serves a SvelteKit page; `package.json`, `svelte.config.js`/`vite.config.ts`, `wrangler.jsonc`, `tsconfig` (strict) present; Svelte 5 runes enabled.
+- [x] **T1** Scaffold a fresh SvelteKit + `adapter-cloudflare` project (fleet tooling versions, own layout — not a sibling copy) — source: PROJECT-SCOPE.md — done: branch feat/m1-t1-scaffold — `svelte-check` 0 errors/0 warnings, `vite build` → `.svelte-kit/cloudflare/_worker.js`, dev server serves HTTP 200.
+      done-when: dev serves a SvelteKit page; `package.json`, `vite.config.ts`, `wrangler.jsonc`, `tsconfig` (strict) present; Svelte 5 runes enabled.
 - [ ] **T2** Define the typed content model in `src/lib/content` (Service, Certification, Praise, Profile types) — depends: [T1]
       done-when: `src/lib/content/*.ts` export typed records; `svelte-check` passes.
 - [ ] **T3** Port all existing content into the typed model — depends: [T2]

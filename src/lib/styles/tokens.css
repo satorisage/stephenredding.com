@@ -1,0 +1,32 @@
+/*
+ * Design tokens — starter set (T1 scaffold).
+ * The full "pop" coaching theme — palette, type scale, motion — lands in T4
+ * after the design direction is ratified. This is a minimal, neutral base so
+ * the scaffold renders coherently in the meantime.
+ */
+:root {
+	color-scheme: light dark;
+
+	/* Neutral OKLCH starter palette (placeholder — T4 replaces with brand) */
+	--bg: light-dark(oklch(98% 0.005 250), oklch(18% 0.01 260));
+	--surface: light-dark(oklch(100% 0 0), oklch(22% 0.015 260));
+	--text: light-dark(oklch(28% 0.02 260), oklch(92% 0.01 250));
+	--text-muted: light-dark(oklch(50% 0.02 260), oklch(70% 0.015 250));
+	--accent: light-dark(oklch(58% 0.15 265), oklch(72% 0.14 265));
+	--border: light-dark(oklch(90% 0.01 260), oklch(34% 0.02 260));
+
+	/* Type scale */
+	--font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--font-display: var(--font-sans);
+	--step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+	--step-1: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+	--step-2: clamp(1.6rem, 1.35rem + 1.1vw, 2.25rem);
+	--step-3: clamp(2.1rem, 1.7rem + 1.9vw, 3.25rem);
+
+	/* Spacing + radius */
+	--space-s: 0.75rem;
+	--space-m: 1.5rem;
+	--space-l: 3rem;
+	--radius: 0.75rem;
+	--measure: 65ch;
+}

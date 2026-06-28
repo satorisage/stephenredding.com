@@ -1,0 +1,10 @@
+{
+	// Cloudflare Pages project config. Bindings declared here are injected at
+	// runtime via event.platform.env — NOT at build/module-init time.
+	// Secrets (TURNSTILE_SECRET_KEY, Graph creds) are NOT here; set them via
+	// `wrangler secret put` / the CI secret store. Only public vars belong here.
+	"name": "stephenredding-com",
+	"compatibility_date": "2026-06-01",
+	"compatibility_flags": ["nodejs_compat"],
+	"pages_build_output_dir": ".svelte-kit/cloudflare"
+}

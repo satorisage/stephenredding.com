@@ -1,9 +1,14 @@
-# Hugo output and cache folders
+# SvelteKit / Vite / Cloudflare
+node_modules/
+/.svelte-kit/
+/build/
+.wrangler/
+.dev.vars
+vite.config.ts.timestamp-*
+
+# Legacy Hugo output (removed in T9; ignored until then)
 /public/
 /resources/
-/node_modules/
-
-# Hugo server generated files
 hugo_stats.json
 .hugo_build.lock
 
