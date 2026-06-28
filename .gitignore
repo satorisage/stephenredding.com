@@ -12,3 +12,7 @@ hugo_stats.json
 Thumbs.db
 .idea/
 *.swp
+
+# dotagent: derived MCP index — markdown is canonical (D-0027)
+.agent/dotagent.db
+.agent/dotagent.db-*
