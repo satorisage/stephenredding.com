@@ -10,8 +10,8 @@ declare global {
 			// dashboard secrets) are injected here at request time, reached via
 			// event.platform?.env.<NAME>.
 			env?: {
-				/** Email Routing send binding (lead-form delivery). */
-				SEB?: { send(message: unknown): Promise<void> };
+				/** Resend API key (lead-form email; secret). */
+				RESEND_API_KEY?: string;
 				/** Turnstile secret (siteverify). */
 				TURNSTILE_SECRET_KEY?: string;
 				/** Lead-form from/to addresses. */

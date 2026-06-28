@@ -9,9 +9,9 @@ TURNSTILE_SECRET_KEY=
 # — Cloudflare Web Analytics (public beacon token) —
 PUBLIC_CF_ANALYTICS_TOKEN=
 
-# — Lead-form email (Cloudflare Email Routing `send_email` binding) —
-# The binding itself (SEB) is configured in wrangler.jsonc, not here, and only
-# works under `wrangler dev` with Email Routing set up. Under plain `vite dev`
-# the form validates and logs but does not send. These two are plain addresses:
-EMAIL_FROM=hello@stephenredding.com
+# — Lead-form email (Resend HTTP API) —
+RESEND_API_KEY=
+# Resend-verified sender on the domain (Name <addr> or addr):
+EMAIL_FROM=Stĕphen Redding <hello@stephenredding.com>
+# Where Discovery Call requests land (defaults to profile.email if empty):
 EMAIL_TO=

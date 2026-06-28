@@ -1,60 +1,70 @@
-import { createMimeMessage } from 'mimetext';
 import { profile } from '$lib/content';
 import type { Deliver, Enquiry } from './contact';
 
 /**
- * Discovery Call delivery via Cloudflare Email Routing (the Workers
- * `send_email` binding). Sends to a verified Email Routing destination (the
- * owner's inbox) — ideal for a one-recipient contact form. No app secret: the
- * binding + a verified destination address is the whole contract.
+ * Discovery Call delivery via Resend (HTTP email API) — a plain `fetch` from
+ * the Pages function, so it works on Cloudflare Pages (the `send_email` binding
+ * is Workers-only). Same shape as the fleet's Graph-over-HTTP call.
  *
- * Runtime config (wrangler.jsonc):
- *   send_email binding `SEB`; vars EMAIL_FROM (on-zone, e.g.
- *   hello@stephenredding.com) and EMAIL_TO (verified destination; defaults to
- *   profile.email).
+ * Config (Cloudflare Pages env):
+ *   RESEND_API_KEY (secret), EMAIL_FROM (a Resend-verified sender on the
+ *   domain), EMAIL_TO (where enquiries land; defaults to profile.email).
  *
- * Graceful degradation: with no binding (local `vite dev`), logs and skips so
- * the form is testable before Email Routing is set up.
+ * Graceful degradation: no API key (local/dev) → log + skip so the form is
+ * testable before Resend is set up. A real send failure throws so the route
+ * can tell the visitor (there is no durable fallback store on this site).
  */
-export interface SendEmailBinding {
-	send(message: unknown): Promise<void>;
+export interface EmailEnv {
+	RESEND_API_KEY?: string;
+	EMAIL_FROM?: string;
+	EMAIL_TO?: string;
 }
 
-export interface EmailEnv {
-	SEB?: SendEmailBinding;
-	/** From address on the zone (must be a domain you control). */
-	EMAIL_FROM?: string;
-	/** Verified Email Routing destination; defaults to profile.email. */
-	EMAIL_TO?: string;
+function escapeHtml(s: string): string {
+	return s.replace(
+		/[&<>"']/g,
+		(c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!
+	);
+}
+
+function renderHtml(e: Enquiry): string {
+	return `<div style="font-family:system-ui,sans-serif;color:#26201f">
+  <h2 style="margin:0 0 12px">New Discovery Call request</h2>
+  <table style="border-collapse:collapse;font-size:14px">
+    <tr><td style="padding:4px 12px 4px 0;color:#8a7d79">Name</td><td style="padding:4px 0">${escapeHtml(e.name)}</td></tr>
+    <tr><td style="padding:4px 12px 4px 0;color:#8a7d79">Email</td><td style="padding:4px 0">${escapeHtml(e.email)}</td></tr>
+  </table>
+  <p style="margin:16px 0 4px;color:#8a7d79">Message</p>
+  <p style="white-space:pre-wrap;margin:0">${escapeHtml(e.message)}</p>
+  <hr style="border:none;border-top:1px solid #e4dad4;margin:20px 0" />
+  <p style="font-size:12px;color:#8a7d79">Reply to this email to reach ${escapeHtml(e.name)} directly.</p>
+</div>`;
 }
 
 export function emailDeliver(env: EmailEnv | undefined): Deliver {
 	return async (enquiry: Enquiry) => {
-		const binding = env?.SEB;
-		if (!binding) {
-			console.warn('[contact] send_email binding (SEB) missing — enquiry not emailed', {
+		const key = env?.RESEND_API_KEY;
+		if (!key) {
+			console.warn('[contact] RESEND_API_KEY missing — enquiry not emailed', {
 				enquiry: { name: enquiry.name, email: enquiry.email }
 			});
 			return;
 		}
 
-		const from = env?.EMAIL_FROM || 'hello@stephenredding.com';
+		const from = env?.EMAIL_FROM || 'Stĕphen Redding <hello@stephenredding.com>';
 		const to = env?.EMAIL_TO || profile.email;
 
-		const mime = createMimeMessage();
-		mime.setSender({ name: 'stephenredding.com', addr: from });
-		mime.setRecipient(to);
-		mime.setSubject(`Discovery Call request from ${enquiry.name}`);
-		// Reply-To the visitor so a reply reaches them directly.
-		mime.setHeader('Reply-To', `${enquiry.name} <${enquiry.email}>`);
-		mime.addMessage({
-			contentType: 'text/plain',
-			data: `New Discovery Call request\n\nName:  ${enquiry.name}\nEmail: ${enquiry.email}\n\n${enquiry.message}\n`
+		const res = await fetch('https://api.resend.com/emails', {
+			method: 'POST',
+			headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
+			body: JSON.stringify({
+				from,
+				to: [to],
+				reply_to: `${enquiry.name} <${enquiry.email}>`,
+				subject: `Discovery Call request from ${enquiry.name}`,
+				html: renderHtml(enquiry)
+			})
 		});
-
-		// `cloudflare:email` is a workerd-only module — imported lazily so local
-		// node SSR (which never has the binding) doesn't try to resolve it.
-		const { EmailMessage } = await import('cloudflare:email');
-		await binding.send(new EmailMessage(from, to, mime.asRaw()));
+		if (!res.ok) throw new Error(`Resend ${res.status}: ${await res.text()}`);
 	};
 }
