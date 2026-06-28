@@ -16,8 +16,8 @@
       done-when: services, certifications, praise, About + contact copy present in `src/lib/content`, faithful to current Hugo content.
 - [x] **T4** Build the CSS-token theme (`tokens.css`, OKLCH palette, `light-dark()`), base layout + global styles — depends: [T1] — done: **Luminous Calm** direction (ratified) — `tokens.css` (OKLCH palette, amber accent + teal secondary, light-dark, fluid type scale, space/radius/shadow), `app.css` base reset + layout primitives + `.btn`, Fraunces+Inter variable fonts, themed hero. `svelte-check` + `vite build` clean; dev serves themed home 200.
       done-when: token sheet + base layout applied; light/dark switch works; type scale + spacing defined.
-- [ ] **T5** Build routes + components wiring content to theme — depends: [T3, T4]
-      done-when: home/About, Services index + `[slug]`, Certifications index + `[slug]`, Praise, Contact all render from typed content with the theme; prerender static pages.
+- [x] **T5** Build routes + components wiring content to theme — depends: [T3, T4] — done: Nav (sticky, active state) + Footer (CTA + social) + ServiceIcon (lucide) + SocialLinks components; routes home (hero + services teaser + cert credibility strip), /about, /services (index) + /services/[slug] (entries() = published only; disabled identity-reset 404s), /certifications (grouped credibility wall, index-only — no per-cert detail by design), /praise (empty-state, noindex while empty), /contact (mailto Discovery Call — form is T6). All prerendered (8 html pages); `svelte-check` 0 errors; all routes serve 200.
+      done-when: home/About, Services index + `[slug]`, Certifications index, Praise, Contact all render from typed content with the theme; prerender static pages.
 - [ ] **T6** Lead form — SvelteKit form action + Turnstile verification + Microsoft Graph email — depends: [T5]
       held: creds
       done-when: contact form posts to a `+page.server.ts` action that verifies Turnstile server-side and sends via Graph; validated locally with test creds; mailto fallback decided.

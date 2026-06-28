@@ -1,14 +1,14 @@
 # Project State
 
 **Last updated:** 2026-06-28
-**Active focus:** M1 migration. **T1–T4 done.** Scaffold builds clean; content
-ported (`src/lib/content`); **theme = "Luminous Calm"** (ratified) shipped —
-`tokens.css` OKLCH palette (warm canvas, amber accent, teal secondary,
-light-dark), Fraunces+Inter, base layout + buttons, themed hero. `svelte-check`
-+ build clean. **Sole ready task: T5** — build all routes/components on the
-theme (home, About, Services index+[slug], Certifications index+[slug] via
-`certificationsByCategory()`, Praise empty-state, Contact). Then T6 (form),
-T7 (conformance), T8 (deploy), T9 (remove Hugo), T10 (verify).
+**Active focus:** M1 migration — **T1–T5 done. The full site is built and
+renders** (Luminous Calm theme): Nav/Footer, home, About, Services index +
+detail, Certifications credibility wall, Praise (empty-state), Contact (mailto
+for now). 8 pages prerendered, `svelte-check` 0 errors, all routes 200, disabled
+service 404s. **Ready: T6** (lead form — held:creds: Turnstile + Graph) and
+**T7** (conformance: robots/sitemap/JSON-LD/CSP/analytics — mostly creds-free;
+only the CF Analytics token is a cred). Remaining: T8 deploy (CF creds), T9
+remove Hugo (authorized), T10 verify.
 
 ---
 
@@ -55,15 +55,18 @@ Deferred work routes by kind. The one tracked deferral so far:
 
 ## 5. Next session
 
-Continue M1 at **T4** — the CSS-token "pop" theme. Held on design: lock a
-direction (palette / type / mood / motion) for a fresh, striking,
-conversion-focused coaching identity, then build `tokens.css` + base layout.
-Then T5 (pages) unblocks: build home/About, Services index+[slug],
-Certifications index+[slug] (use `certificationsByCategory()`), Praise
-(empty-state), Contact.
+Continue M1. **T7 (conformance)** is mostly doable without creds — robots.txt,
+sitemap.xml (prerender endpoint), canonical + JSON-LD (Person/WebSite/Service
+schema), strict hashed CSP via hooks/`_headers`. Only the CF Web Analytics
+beacon needs `PUBLIC_CF_ANALYTICS_TOKEN`. **T6 (lead form)** is held on creds:
+Turnstile sitekey/secret + Microsoft Graph app creds.
+
+Creds needed from the operator:
+- T6: Turnstile sitekey (public) + secret; Microsoft Graph (tenant/client id +
+  secret, sender mailbox).
+- T7: `PUBLIC_CF_ANALYTICS_TOKEN`.
+- T8: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`; CF Pages project + custom
+  domain.
 
 Open factual correction to ratify: SCOPE says "16 certifications" — actual is
 **14**. Update SCOPE hard-constraint + capability lines once confirmed.
-
-Secrets needed later (T6/T8): `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`,
-`PUBLIC_CF_ANALYTICS_TOKEN`, Turnstile sitekey/secret, Microsoft Graph creds.
