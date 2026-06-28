@@ -5,9 +5,9 @@ Pages at `stephenredding.com`, the operator completes the steps below. Nothing
 is pushed to origin yet, so the **current live site (old Hugo on GitHub Pages)
 is unaffected** until the DNS cutover in step 6.
 
-Prerequisites: a Cloudflare account; for the lead-form email, a Microsoft 365
-tenant with a mailbox to send from (see step 4 — if you have no M365, the form
-needs a different email transport; tell me and I'll swap it).
+Prerequisites: a Cloudflare account, and the domain's DNS on Cloudflare (needed
+for Pages custom domain + Email Routing). The lead-form email uses **Cloudflare
+Email Routing** (no M365 — domain is on Proton).
 
 ---
 
@@ -33,19 +33,23 @@ gh secret set CLOUDFLARE_ACCOUNT_ID     # paste account id from step 1
 gh variable set PUBLIC_CF_ANALYTICS_TOKEN   # CF Web Analytics site tag (public; empty ok for now)
 ```
 
-## 4. Lead-form secrets (Cloudflare Pages, encrypted) — for the Discovery Call email
+## 4. Lead-form email — Cloudflare Email Routing (`send_email` binding)
 
-Microsoft Graph (client-credentials) app: Entra ID → App registrations → New →
-add **application** permission `Mail.Send` (admin-consent) → create a client
-secret. Then:
+1. CF dashboard → the zone `stephenredding.com` → **Email Routing** → enable it
+   (adds the required MX/TXT records automatically when DNS is on Cloudflare).
+2. **Destination addresses** → add + **verify** the inbox where Discovery Call
+   requests should land (your Proton/personal address). The `send_email` binding
+   can only send to a *verified* destination.
+3. Set the form's from/to as CF Pages vars (or in `wrangler.jsonc`):
+   `EMAIL_FROM` = an on-zone address (e.g. `hello@stephenredding.com`),
+   `EMAIL_TO` = the verified destination from step 2.
+4. The `send_email` binding `SEB` is already declared in `wrangler.jsonc` — no
+   secret needed.
+
+Turnstile secret (the only encrypted secret) is set in step 5.
 
 ```bash
 npx wrangler pages secret put TURNSTILE_SECRET_KEY --project-name stephenredding-com
-npx wrangler pages secret put GRAPH_TENANT_ID      --project-name stephenredding-com
-npx wrangler pages secret put GRAPH_CLIENT_ID       --project-name stephenredding-com
-npx wrangler pages secret put GRAPH_CLIENT_SECRET   --project-name stephenredding-com
-npx wrangler pages secret put GRAPH_SENDER          --project-name stephenredding-com   # M365 mailbox UPN to send AS
-# optional: GRAPH_TO (defaults to profile.email)
 ```
 
 ## 5. Public vars (Turnstile sitekey + analytics) — CF Pages dashboard or `wrangler.jsonc`

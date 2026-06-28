@@ -17,14 +17,11 @@
 	"vars": {
 		"PUBLIC_TURNSTILE_SITEKEY": "",
 		"PUBLIC_CF_ANALYTICS_TOKEN": "",
-		// Lead-form addresses. EMAIL_FROM must be on a domain you control;
-		// EMAIL_TO must be a VERIFIED Cloudflare Email Routing destination
-		// (empty → defaults to profile.email in code).
 		"EMAIL_FROM": "hello@stephenredding.com",
 		"EMAIL_TO": ""
-	},
-
-	// Cloudflare Email Routing send binding — the lead-form transport. Requires
-	// Email Routing enabled on the zone + a verified destination address.
-	"send_email": [{ "name": "SEB" }]
+	}
+	// NOTE: the `send_email` binding is Workers-only — Cloudflare PAGES rejects
+	// it. Lead-form email transport is pending a decision (transactional API
+	// like Resend on Pages, or migrate to Workers for native send_email). The
+	// form degrades to its mailto fallback until then.
 }

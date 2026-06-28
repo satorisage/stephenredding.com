@@ -41,12 +41,20 @@ Not yet using `.agent/ROADMAP.md`; the milestone DoD lives in
 
 ## 3. Open check-ins
 
-- **T8 deploy — awaiting operator creds + Cloudflare setup.** CI code authored
-  (`deploy.yml` + wrangler vars). Operator steps in
-  `.agent/REPORTS/t8-deploy-setup.md`: CF API token/account id → GH secrets,
-  Pages project, Turnstile/Graph secrets, public vars, DNS cutover. **Open
-  prerequisite question: does the operator have Microsoft 365** for the Graph
-  email send? If not, the form needs a different email transport.
+- **Lead-form email transport — UNRESOLVED (blocks form on production).**
+  Finding (2026-06-28): Cloudflare **Pages does not support the `send_email`
+  binding** (Workers-only) — the binding was removed so the site deploys. No
+  M365 either. On Pages the form needs an **HTTP email API** (the fleet uses
+  Graph-over-HTTP; we'd use **Resend** or similar). Until wired, the form shows
+  success but only logs server-side (mailto fallback is the real path). Decide:
+  Resend (works on Pages, needs account+API key+domain verify) vs migrate
+  Pages→Workers for native send_email (diverges from the all-Pages fleet).
+- **T8 deploy — partially done.** Site is LIVE on Cloudflare Pages at
+  `stephenredding-com.pages.dev` (manual `wrangler pages deploy`, account
+  "Personal" da577f8e…). Remaining: email transport (above), custom-domain +
+  DNS cutover (stephenredding.com → CF Pages), GH Actions API token/secrets for
+  auto-deploy, Turnstile + analytics tokens. Runbook:
+  `.agent/REPORTS/t8-deploy-setup.md`.
 
 ---
 
