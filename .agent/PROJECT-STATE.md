@@ -17,9 +17,10 @@ sentinel-conformant public surface. No build work started yet.
 | **All ratified design decisions** | `.agent/DECISIONS/` (index in `DECISIONS/README.md`) |
 | **Open check-ins awaiting input** | `.agent/CHECKINS/` (root; archived in `CHECKINS/ARCHIVED/`) |
 | **Generated bootstrap / audit / inspect reports** | `.agent/REPORTS/` (incl. `project-brief.md`, the locked vision) |
+| **Ratified work-structure (milestone→task tree, depends-edges)** | `.agent/ROADMAP.md` (canonical; M1 is Active) |
+| **Committed work ready now (derived frontier)** | `.agent/TODO.md` (generated from ROADMAP by `roadmap-render.sh`; never hand-edited) |
 
-No project-specific extension surfaces yet (no ROADMAP/TODO/IDEAS in use).
-Add rows here when one is first created.
+No IDEAS inbox in use yet. Add rows here when a new surface is first created.
 
 ---
 
@@ -28,8 +29,8 @@ Add rows here when one is first created.
 Not yet using `.agent/ROADMAP.md`; the milestone DoD lives in
 `PROJECT-SCOPE.md` `## Active milestone`.
 
-**Milestone:** M1 — Hugo → SvelteKit/Cloudflare migration (see PROJECT-SCOPE.md for the 5-point definition of done)
-**Active blockers:** none
+**Milestone:** M1 — Hugo → SvelteKit/Cloudflare migration → see `.agent/ROADMAP.md` `## Active` (T1–T10). Ready now: **T1** (scaffold). Per-task `done-when:` lives in ROADMAP.
+**Active blockers:** none (T4 held: design; T6/T8 held: creds; T9 held: destructive — none blocking the ready frontier)
 
 ---
 
