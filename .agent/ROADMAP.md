@@ -24,6 +24,7 @@
       done-when: robots + sitemap emitted; canonical + JSON-LD on pages; CSP without `unsafe-inline`; analytics beacon wired via `PUBLIC_CF_ANALYTICS_TOKEN` (token set at deploy / T8).
 - [ ] **T8** CI/deploy — `wrangler.jsonc` bindings/vars, GitHub Actions (check → build → `wrangler pages deploy`), secrets, custom domain — depends: [T6, T7]
       held: creds
+      progress: CI code authored — `.github/workflows/deploy.yml` (check → build → `wrangler pages deploy --branch=main` → informational Lighthouse) + `wrangler.jsonc` public `vars` placeholders. Build clean. Awaiting operator: CF API token + account id (→ GitHub secrets), CF Pages project, Turnstile/Graph/analytics values (→ CF secrets + vars / GH var), DNS cutover GitHub Pages → CF Pages. Setup guide: `.agent/REPORTS/t8-deploy-setup.md`. NOT pushed — live site still old Hugo.
       done-when: push to `main` builds + deploys to CF Pages; `stephenredding.com` serves the SvelteKit site over HTTPS; secrets set via `wrangler secret`/CI store.
 - [ ] **T9** Remove Hugo + Tailwind v3 (layouts/, content/, archetypes/, `hugo.toml`, `generate-safelist.js`, tailwind v3 config, `.github/workflows/hugo.yml`); update `package.json` — depends: [T8]
       held: destructive

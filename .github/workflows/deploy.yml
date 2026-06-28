@@ -1,0 +1,72 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  # Quality gate — type errors block the deploy.
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build
+        # Public Cloudflare Web Analytics token, inlined at build for the
+        # prerendered pages. SSR pages read the same value at runtime from
+        # wrangler.jsonc "vars" (both phases needed for a mixed-render site).
+        # Set it as an Actions *variable* (repo Settings → Variables), not a
+        # secret — it is public by design. Empty until set → beacon omitted.
+        env:
+          PUBLIC_CF_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CF_ANALYTICS_TOKEN }}
+        run: npm run build
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler pages deploy --branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+  # Lighthouse on the live site (perf / a11y / best-practices / SEO).
+  # Informational — produces a public report link each deploy; never blocks.
+  lighthouse:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for deploy to propagate
+        run: sleep 20
+      - name: Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://stephenredding.com/
+            https://stephenredding.com/services
+            https://stephenredding.com/certifications
+            https://stephenredding.com/contact
+          uploadArtifacts: true
+          temporaryPublicStorage: true

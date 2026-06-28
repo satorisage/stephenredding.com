@@ -41,7 +41,12 @@ Not yet using `.agent/ROADMAP.md`; the milestone DoD lives in
 
 ## 3. Open check-ins
 
-none
+- **T8 deploy — awaiting operator creds + Cloudflare setup.** CI code authored
+  (`deploy.yml` + wrangler vars). Operator steps in
+  `.agent/REPORTS/t8-deploy-setup.md`: CF API token/account id → GH secrets,
+  Pages project, Turnstile/Graph secrets, public vars, DNS cutover. **Open
+  prerequisite question: does the operator have Microsoft 365** for the Graph
+  email send? If not, the form needs a different email transport.
 
 ---
 
