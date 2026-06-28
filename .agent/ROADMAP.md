@@ -10,10 +10,10 @@
 
 - [x] **T1** Scaffold a fresh SvelteKit + `adapter-cloudflare` project (fleet tooling versions, own layout — not a sibling copy) — source: PROJECT-SCOPE.md — done: branch feat/m1-t1-scaffold — `svelte-check` 0 errors/0 warnings, `vite build` → `.svelte-kit/cloudflare/_worker.js`, dev server serves HTTP 200.
       done-when: dev serves a SvelteKit page; `package.json`, `vite.config.ts`, `wrangler.jsonc`, `tsconfig` (strict) present; Svelte 5 runes enabled.
-- [ ] **T2** Define the typed content model in `src/lib/content` (Service, Certification, Praise, Profile types) — depends: [T1]
+- [x] **T2** Define the typed content model in `src/lib/content` (Service, Certification, Praise, Profile types) — depends: [T1] — done: `types.ts` + barrel `index.ts`; `svelte-check` 0 errors.
       done-when: `src/lib/content/*.ts` export typed records; `svelte-check` passes.
-- [ ] **T3** Port all existing content into the typed model — depends: [T2]
-      done-when: 3 services (1:1 Coaching, Identity Reset, Communication Support), 16 certifications, praise entries, About + contact copy present in `src/lib/content`, faithful to current Hugo content.
+- [x] **T3** Port all existing content into the typed model — depends: [T2] — done: **14** certifications (corrected from 16 — actual count), 3 services (identity-reset preserved `enabled:false`), About + contact + 4 social links ported; praise empty (no real testimonials — placeholder not shipped); typos fixed per copy-truth; `svelte-check` clean.
+      done-when: services, certifications, praise, About + contact copy present in `src/lib/content`, faithful to current Hugo content.
 - [ ] **T4** Build the CSS-token theme (`tokens.css`, OKLCH palette, `light-dark()`), base layout + global styles — depends: [T1]
       held: design
       done-when: token sheet + base layout applied; light/dark switch works; type scale + spacing defined.

@@ -13,12 +13,10 @@
 
 ## Now
 
-- [ ] Define the typed content model in `src/lib/content` (Service, Certification, Praise, Profile types) — source: ROADMAP M1.T2
 - [ ] Build the CSS-token theme (`tokens.css`, OKLCH palette, `light-dark()`), base layout + global styles — source: ROADMAP M1.T4
 
 ## Next
 
-- [ ] Port all existing content into the typed model — source: ROADMAP M1.T3
 - [ ] Build routes + components wiring content to theme — source: ROADMAP M1.T5
 - [ ] Lead form — SvelteKit form action + Turnstile verification + Microsoft Graph email — source: ROADMAP M1.T6
 - [ ] Conformance surface — robots.txt, sitemap.xml, canonical, JSON-LD, strict hashed CSP, Cloudflare Web Analytics — source: ROADMAP M1.T7

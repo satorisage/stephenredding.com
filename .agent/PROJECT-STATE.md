@@ -1,12 +1,14 @@
 # Project State
 
 **Last updated:** 2026-06-28
-**Active focus:** M1 migration underway. **T1 (scaffold) done** — fresh
-SvelteKit + Svelte 5 runes + adapter-cloudflare project builds clean
-(`svelte-check` 0 errors, `vite build` → `.svelte-kit/cloudflare`, dev serves
-200). Hugo files left dormant as porting source (removal authorized for T9).
-Ready frontier: **T2** (typed content model) and **T4** (CSS-token "pop"
-theme — held:design, awaiting a ratified design direction).
+**Active focus:** M1 migration. **T1–T3 done** — scaffold builds clean; all
+content ported into the typed model at `src/lib/content` (14 certifications
+[corrected from 16], 3 services with identity-reset preserved disabled,
+About/contact/social; praise intentionally empty — no real testimonials).
+`svelte-check` 0 errors. Hugo files dormant as reference (removal authorized
+for T9). **Sole ready task: T4** — the CSS-token "pop" theme, **held:design**,
+awaiting a ratified design direction (options being presented to the user). T5
+(pages) is blocked on T4.
 
 ---
 
@@ -53,13 +55,15 @@ Deferred work routes by kind. The one tracked deferral so far:
 
 ## 5. Next session
 
-Continue M1. Two ready tasks:
-- **T2** — typed content model in `src/lib/content` (Service, Certification,
-  Praise, Profile). Design-independent; can proceed now. Sources: `content/`
-  + `data/social.toml` (Hugo, kept as reference).
-- **T4** — CSS-token "pop" theme. **Held on design**: the user wants a fresh,
-  striking, conversion-focused identity ("actually pop to someone wanting the
-  services") — align a design direction before building it.
+Continue M1 at **T4** — the CSS-token "pop" theme. Held on design: lock a
+direction (palette / type / mood / motion) for a fresh, striking,
+conversion-focused coaching identity, then build `tokens.css` + base layout.
+Then T5 (pages) unblocks: build home/About, Services index+[slug],
+Certifications index+[slug] (use `certificationsByCategory()`), Praise
+(empty-state), Contact.
+
+Open factual correction to ratify: SCOPE says "16 certifications" — actual is
+**14**. Update SCOPE hard-constraint + capability lines once confirmed.
 
 Secrets needed later (T6/T8): `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`,
 `PUBLIC_CF_ANALYTICS_TOKEN`, Turnstile sitekey/secret, Microsoft Graph creds.
