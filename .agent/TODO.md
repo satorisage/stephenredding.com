@@ -13,11 +13,10 @@
 
 ## Now
 
-- [ ] Build the CSS-token theme (`tokens.css`, OKLCH palette, `light-dark()`), base layout + global styles — source: ROADMAP M1.T4
+- [ ] Build routes + components wiring content to theme — source: ROADMAP M1.T5
 
 ## Next
 
-- [ ] Build routes + components wiring content to theme — source: ROADMAP M1.T5
 - [ ] Lead form — SvelteKit form action + Turnstile verification + Microsoft Graph email — source: ROADMAP M1.T6
 - [ ] Conformance surface — robots.txt, sitemap.xml, canonical, JSON-LD, strict hashed CSP, Cloudflare Web Analytics — source: ROADMAP M1.T7
 - [ ] CI/deploy — `wrangler.jsonc` bindings/vars, GitHub Actions (check → build → `wrangler pages deploy`), secrets, custom domain — source: ROADMAP M1.T8

@@ -1,55 +1,81 @@
+<script lang="ts">
+	import { profile } from '$lib/content';
+</script>
+
 <svelte:head>
 	<title>Stĕphen Redding — Self-Awareness Coach</title>
 	<meta
 		name="description"
-		content="Self-awareness coaching to help you reconnect with the truth of who you are."
+		content="Self-awareness coaching to help you reconnect with the truth of who you are — beyond fear, shame, and old beliefs."
 	/>
 </svelte:head>
 
 <main>
 	<section class="hero">
-		<p class="eyebrow">Self-Awareness Coach</p>
-		<h1>Hi, I go by Stĕphen.</h1>
-		<p class="lede">
-			I help people reconnect with the truth of who they are — beyond fear, shame, and the
-			old beliefs that have clouded their identity.
-		</p>
-		<p class="scaffold-note">
-			SvelteKit scaffold running. Pages and the full design land in the next migration tasks.
-		</p>
+		<div class="hero-glow" aria-hidden="true"></div>
+		<div class="container hero-inner">
+			<p class="eyebrow">{profile.role}</p>
+			<h1>Reconnect with the<br /><em>truth</em> of who you are.</h1>
+			<p class="lede prose">
+				I help people move beyond fear, shame, and the old beliefs that have clouded their
+				identity — back to the clarity, peace, and freedom already within them.
+			</p>
+			<div class="cta-row">
+				<a class="btn btn-primary" href="/contact">Book a Discovery Call</a>
+				<a class="btn btn-ghost" href="/services">Explore the work</a>
+			</div>
+			<p class="signature">— {profile.greeting}</p>
+		</div>
 	</section>
 </main>
 
 <style>
-	main {
-		max-width: var(--measure);
-		margin-inline: auto;
-		padding: var(--space-l) var(--space-m);
+	.hero {
+		position: relative;
+		overflow: hidden;
+		padding-block: clamp(var(--space-xl), 12vh, var(--space-2xl));
 	}
 
-	.eyebrow {
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		font-size: 0.8rem;
-		color: var(--accent);
-		margin: 0 0 var(--space-s);
+	.hero-glow {
+		position: absolute;
+		inset: -20% 0 auto 0;
+		height: 70%;
+		background: var(--glow);
+		filter: blur(8px);
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.hero-inner {
+		position: relative;
+		z-index: 1;
 	}
 
 	h1 {
-		font-size: var(--step-3);
-		margin: 0 0 var(--space-m);
+		max-width: 18ch;
+	}
+	h1 em {
+		font-style: italic;
+		color: var(--accent-ink);
 	}
 
 	.lede {
 		font-size: var(--step-1);
-		color: var(--text);
-		margin: 0 0 var(--space-l);
+		color: var(--text-muted);
+		margin-block: var(--space-m) var(--space-l);
 	}
 
-	.scaffold-note {
-		font-size: 0.9rem;
-		color: var(--text-muted);
-		border-top: 1px solid var(--border);
-		padding-top: var(--space-m);
+	.cta-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-s);
+	}
+
+	.signature {
+		font-family: var(--font-display);
+		font-style: italic;
+		font-size: var(--step-1);
+		color: var(--text);
+		margin-top: var(--space-xl);
 	}
 </style>

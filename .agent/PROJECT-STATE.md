@@ -1,14 +1,14 @@
 # Project State
 
 **Last updated:** 2026-06-28
-**Active focus:** M1 migration. **T1–T3 done** — scaffold builds clean; all
-content ported into the typed model at `src/lib/content` (14 certifications
-[corrected from 16], 3 services with identity-reset preserved disabled,
-About/contact/social; praise intentionally empty — no real testimonials).
-`svelte-check` 0 errors. Hugo files dormant as reference (removal authorized
-for T9). **Sole ready task: T4** — the CSS-token "pop" theme, **held:design**,
-awaiting a ratified design direction (options being presented to the user). T5
-(pages) is blocked on T4.
+**Active focus:** M1 migration. **T1–T4 done.** Scaffold builds clean; content
+ported (`src/lib/content`); **theme = "Luminous Calm"** (ratified) shipped —
+`tokens.css` OKLCH palette (warm canvas, amber accent, teal secondary,
+light-dark), Fraunces+Inter, base layout + buttons, themed hero. `svelte-check`
++ build clean. **Sole ready task: T5** — build all routes/components on the
+theme (home, About, Services index+[slug], Certifications index+[slug] via
+`certificationsByCategory()`, Praise empty-state, Contact). Then T6 (form),
+T7 (conformance), T8 (deploy), T9 (remove Hugo), T10 (verify).
 
 ---
 

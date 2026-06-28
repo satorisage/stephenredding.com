@@ -14,8 +14,7 @@
       done-when: `src/lib/content/*.ts` export typed records; `svelte-check` passes.
 - [x] **T3** Port all existing content into the typed model — depends: [T2] — done: **14** certifications (corrected from 16 — actual count), 3 services (identity-reset preserved `enabled:false`), About + contact + 4 social links ported; praise empty (no real testimonials — placeholder not shipped); typos fixed per copy-truth; `svelte-check` clean.
       done-when: services, certifications, praise, About + contact copy present in `src/lib/content`, faithful to current Hugo content.
-- [ ] **T4** Build the CSS-token theme (`tokens.css`, OKLCH palette, `light-dark()`), base layout + global styles — depends: [T1]
-      held: design
+- [x] **T4** Build the CSS-token theme (`tokens.css`, OKLCH palette, `light-dark()`), base layout + global styles — depends: [T1] — done: **Luminous Calm** direction (ratified) — `tokens.css` (OKLCH palette, amber accent + teal secondary, light-dark, fluid type scale, space/radius/shadow), `app.css` base reset + layout primitives + `.btn`, Fraunces+Inter variable fonts, themed hero. `svelte-check` + `vite build` clean; dev serves themed home 200.
       done-when: token sheet + base layout applied; light/dark switch works; type scale + spacing defined.
 - [ ] **T5** Build routes + components wiring content to theme — depends: [T3, T4]
       done-when: home/About, Services index + `[slug]`, Certifications index + `[slug]`, Praise, Contact all render from typed content with the theme; prerender static pages.
