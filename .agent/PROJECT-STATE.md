@@ -1,15 +1,15 @@
 # Project State
 
 **Last updated:** 2026-06-28
-**Active focus:** M1 migration — **T1–T5 + T7 done.** Full site built (Luminous
-Calm); conformance surface shipped: robots, sitemap, canonical, Person/WebSite/
-Service JSON-LD, **strict hashed CSP** (`svelte.config.js` kit.csp), CF Web
-Analytics beacon gated by `PUBLIC_CF_ANALYTICS_TOKEN`. `svelte-check` 0 errors;
-prerender clean with/without token. **Sole ready task: T6 (lead form)** —
-held:creds, but the *code* can be built now (Turnstile widget + verify, Graph
-send via `platform.env`) with real values wired at deploy, same pattern as the
-analytics beacon. Then T8 deploy (CF creds), T9 remove Hugo (authorized), T10
-verify. Critical path is now cred-gated.
+**Active focus:** M1 migration — **T1–T7 done (everything buildable without
+the operator's accounts).** Full site + conformance + lead form all code-complete
+and verified locally (`svelte-check` 0 errors, builds clean). Lead form
+validates/sends with graceful degradation; live send needs creds. **Sole ready
+task: T8 (deploy)** — the hard cred gate: needs `CLOUDFLARE_API_TOKEN` +
+`CLOUDFLARE_ACCOUNT_ID`, a CF Pages project, the Turnstile/Graph/analytics
+secrets set in CF, and DNS moved from GitHub Pages → Cloudflare Pages. Nothing
+pushed to origin yet — **the live site is still the old Hugo on GitHub Pages**,
+unaffected. T9 (remove Hugo) and T10 (verify) follow the deploy.
 
 ---
 

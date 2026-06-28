@@ -1,0 +1,19 @@
+# Local secrets for `wrangler`/`vite dev`. Copy to `.dev.vars` (gitignored) and
+# fill in. In production these are Cloudflare Pages secrets / CI secrets — never
+# committed. PUBLIC_* are build-time public vars (safe to expose to the client).
+
+# — Cloudflare Turnstile (anti-spam) —
+PUBLIC_TURNSTILE_SITEKEY=
+TURNSTILE_SECRET_KEY=
+
+# — Microsoft Graph (client-credentials) for Discovery Call email —
+GRAPH_TENANT_ID=
+GRAPH_CLIENT_ID=
+GRAPH_CLIENT_SECRET=
+# Mailbox to send AS (M365 UPN), e.g. hello@stephenredding.com
+GRAPH_SENDER=
+# Where enquiries land (defaults to profile.email if unset)
+GRAPH_TO=
+
+# — Cloudflare Web Analytics (public beacon token) —
+PUBLIC_CF_ANALYTICS_TOKEN=
