@@ -6,10 +6,21 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		interface Platform {
-			// Cloudflare bindings/secrets declared in wrangler.jsonc are injected
-			// here at request time. Reached via event.platform?.env.<NAME>.
-			// Typed loosely until the lead form (T6) and deploy (T8) wire real bindings.
-			env?: Record<string, string | undefined>;
+			// Cloudflare bindings/vars/secrets declared in wrangler.jsonc (and
+			// dashboard secrets) are injected here at request time, reached via
+			// event.platform?.env.<NAME>.
+			env?: {
+				/** Email Routing send binding (lead-form delivery). */
+				SEB?: { send(message: unknown): Promise<void> };
+				/** Turnstile secret (siteverify). */
+				TURNSTILE_SECRET_KEY?: string;
+				/** Lead-form from/to addresses. */
+				EMAIL_FROM?: string;
+				EMAIL_TO?: string;
+				/** Public runtime vars. */
+				PUBLIC_TURNSTILE_SITEKEY?: string;
+				PUBLIC_CF_ANALYTICS_TOKEN?: string;
+			};
 		}
 	}
 }

@@ -1,6 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { handleEnquiry } from '$lib/server/contact';
-import { emailDeliver, type GraphEnv } from '$lib/server/email';
+import { emailDeliver } from '$lib/server/email';
 import { verifyTurnstile } from '$lib/server/turnstile';
 import type { Actions } from './$types';
 
@@ -15,7 +15,7 @@ const keep = (raw: Record<string, unknown>) => ({
 
 export const actions: Actions = {
 	default: async ({ request, platform, getClientAddress }) => {
-		const env = platform?.env as (GraphEnv & { TURNSTILE_SECRET_KEY?: string }) | undefined;
+		const env = platform?.env;
 		const form = await request.formData();
 		const raw = Object.fromEntries(form) as Record<string, unknown>;
 

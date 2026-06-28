@@ -6,14 +6,12 @@
 PUBLIC_TURNSTILE_SITEKEY=
 TURNSTILE_SECRET_KEY=
 
-# — Microsoft Graph (client-credentials) for Discovery Call email —
-GRAPH_TENANT_ID=
-GRAPH_CLIENT_ID=
-GRAPH_CLIENT_SECRET=
-# Mailbox to send AS (M365 UPN), e.g. hello@stephenredding.com
-GRAPH_SENDER=
-# Where enquiries land (defaults to profile.email if unset)
-GRAPH_TO=
-
 # — Cloudflare Web Analytics (public beacon token) —
 PUBLIC_CF_ANALYTICS_TOKEN=
+
+# — Lead-form email (Cloudflare Email Routing `send_email` binding) —
+# The binding itself (SEB) is configured in wrangler.jsonc, not here, and only
+# works under `wrangler dev` with Email Routing set up. Under plain `vite dev`
+# the form validates and logs but does not send. These two are plain addresses:
+EMAIL_FROM=hello@stephenredding.com
+EMAIL_TO=

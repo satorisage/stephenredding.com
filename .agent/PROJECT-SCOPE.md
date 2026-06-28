@@ -16,10 +16,15 @@ and turns prospects into Discovery-Call leads.
 - css — custom CSS + OKLCH design tokens + `light-dark()` theming (the chosen styling axis).
 - ui-ux — designed marketing surface: structure, hierarchy, components, accessibility.
 - jobs-to-be-done — designs from the prospect's job (assess trust → book a call); the conversion lens.
-- microsoft-graph — the lead form sends email via Microsoft Graph.
-- cloudflare-pages-workers — edge hosting/runtime: Pages, Workers isolates, wrangler, bindings, CF Web Analytics, Turnstile.
+- cloudflare-pages-workers — edge hosting/runtime: Pages, Workers isolates, wrangler, bindings (incl. the `send_email` lead-form transport), CF Web Analytics, Turnstile.
 - local-trade-marketing — trust-dependent service marketing: every claim a credibility claim, judged by leads.
-- copy-truth — keeps the 16 certification claims and in-product copy verifiable.
+- copy-truth — keeps the 14 certification claims and in-product copy verifiable.
+
+> **2026-06-28 decision (supersedes the vision's email choice):** the lead-form
+> email transport is **Cloudflare Email Routing (`send_email` binding)**, not
+> Microsoft Graph — the domain is on Proton with no M365 tenant. The
+> `microsoft-graph` pairing is dropped accordingly. Cert count corrected 16 → 14
+> (actual content count).
 - prose-craft — readability of the reflective About/Services prose.
 
 ## Principles, in priority order
@@ -41,9 +46,9 @@ and turns prospects into Discovery-Call leads.
 
 - Cloudflare Workers runtime — no Node-only APIs unless `nodejs_compat` is declared in `wrangler.jsonc`.
 - Strict Content-Security-Policy, no `unsafe-inline`; allowlist `static.cloudflareinsights.com` and `challenges.cloudflare.com`.
-- Secrets never committed — Turnstile secret key, Microsoft Graph credentials, and CI tokens go through `wrangler secret` / CI secret store. Only `PUBLIC_`-prefixed values may be committed as `vars`.
+- Secrets never committed — Turnstile secret key and CI tokens go through `wrangler secret` / CI secret store. Only `PUBLIC_`-prefixed values may be committed as `vars`. (Cloudflare email uses a `send_email` binding + verified Email Routing address — no app secret.)
 - TypeScript `strict`; content modeled as typed `src/lib/content/*.ts`, not markdown.
-- All existing content preserved: About, 3 services (1:1 Coaching, Identity Reset, Communication Support), 16 certifications, praise, contact.
+- All existing content preserved: About, 3 services (1:1 Coaching, Identity Reset, Communication Support), 14 certifications, praise, contact.
 - Site must pass the sentinel probe surface (HTTPS, robots, sitemap, canonical, JSON-LD, headers, Lighthouse).
 - Single deploy model: direct-upload `wrangler pages deploy` via GitHub Actions (no git-integration builds).
 
@@ -53,7 +58,7 @@ and turns prospects into Discovery-Call leads.
 - About / home, Services (index + 3 detail pages), Certifications (index + 16 detail entries), Praise/testimonials, Contact.
 
 ### Conversion
-- Lead form (SvelteKit form action) with Turnstile verification, sending email via Microsoft Graph; "Discovery Call" intent.
+- Lead form (SvelteKit form action) with Turnstile verification, sending email via Cloudflare Email Routing (`send_email` binding); "Discovery Call" intent.
 
 ### Platform & ops
 - Cloudflare Pages deploy via GitHub Actions; Cloudflare Web Analytics; strict CSP; JSON-LD structured data; robots/sitemap.
@@ -95,8 +100,8 @@ Hybrid, per the operating manual.
 
 **Milestone:** M1 — Hugo → SvelteKit/Cloudflare migration
 **Definition of done:**
-1. All existing content (About, 3 services, 16 certifications, praise, contact) renders on SvelteKit with the new CSS-token theme.
-2. Lead form verifies Turnstile and sends a real email via Microsoft Graph.
+1. All existing content (About, 3 services, 14 certifications, praise, contact) renders on SvelteKit with the new CSS-token theme.
+2. Lead form verifies Turnstile and sends a real email via Cloudflare Email Routing.
 3. Deployed to Cloudflare Pages on the live `stephenredding.com` domain via GitHub Actions.
 4. Passes Lighthouse health and ships the sentinel probe surface (robots, sitemap, canonical, JSON-LD, strict CSP).
 5. Hugo, Go templates, and Tailwind v3 removed from the repo.

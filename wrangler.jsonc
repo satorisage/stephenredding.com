@@ -12,10 +12,19 @@
 	// analytics beacon) via $env/dynamic/public. Public by design; safe to
 	// commit. Fill with real values here, or override in the CF Pages dashboard.
 	// Empty = feature degrades off (no widget / no beacon).
-	// SECRETS (TURNSTILE_SECRET_KEY, GRAPH_*) are NOT here — set via
+	// SECRETS (TURNSTILE_SECRET_KEY) are NOT here — set via
 	// `wrangler pages secret put` / the CF dashboard (encrypted).
 	"vars": {
 		"PUBLIC_TURNSTILE_SITEKEY": "",
-		"PUBLIC_CF_ANALYTICS_TOKEN": ""
-	}
+		"PUBLIC_CF_ANALYTICS_TOKEN": "",
+		// Lead-form addresses. EMAIL_FROM must be on a domain you control;
+		// EMAIL_TO must be a VERIFIED Cloudflare Email Routing destination
+		// (empty → defaults to profile.email in code).
+		"EMAIL_FROM": "hello@stephenredding.com",
+		"EMAIL_TO": ""
+	},
+
+	// Cloudflare Email Routing send binding — the lead-form transport. Requires
+	// Email Routing enabled on the zone + a verified destination address.
+	"send_email": [{ "name": "SEB" }]
 }
