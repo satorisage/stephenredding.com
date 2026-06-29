@@ -31,11 +31,11 @@
 				<a class="btn btn-primary" href="/contact">Book a Discovery Call</a>
 				<a class="btn btn-ghost" href="/services">Explore the work</a>
 			</div>
-			<p class="signature">— {profile.greeting}</p>
 		</div>
-		<div class="hero-portrait">
+		<figure class="hero-portrait">
 			<img src={profile.photo} alt="Stĕphen Redding" width="440" height="440" />
-		</div>
+			<figcaption class="signature">— {profile.greeting}</figcaption>
+		</figure>
 	</div>
 </section>
 
@@ -111,6 +111,11 @@
 	.hero-portrait {
 		justify-self: center;
 		order: -1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-s);
+		margin: 0;
 	}
 	@media (min-width: 52rem) {
 		.hero-portrait {
@@ -123,7 +128,9 @@
 		object-fit: cover;
 		border-radius: var(--radius-l);
 		border: 1px solid var(--border);
-		box-shadow: var(--shadow-lift);
+		box-shadow:
+			0 0 0 1px color-mix(in oklch, var(--accent), transparent 70%),
+			0 30px 70px var(--glow-amber);
 	}
 	h1 {
 		max-width: 18ch;
@@ -146,7 +153,9 @@
 		font-family: var(--font-display);
 		font-style: italic;
 		font-size: var(--step-1);
-		margin-top: var(--space-xl);
+		color: var(--text);
+		text-align: center;
+		margin: 0;
 	}
 
 	.section {
