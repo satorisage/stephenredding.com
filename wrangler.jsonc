@@ -18,9 +18,12 @@
 	// send_email binding is Workers-only). EMAIL_FROM must be a Resend-verified
 	// sender on the domain; EMAIL_TO defaults to profile.email when empty.
 	"vars": {
-		"PUBLIC_TURNSTILE_SITEKEY": "",
+		"PUBLIC_TURNSTILE_SITEKEY": "0x4AAAAAADscjWnG4IIje_8E",
 		"PUBLIC_CF_ANALYTICS_TOKEN": "",
-		"EMAIL_FROM": "Stĕphen Redding <hello@stephenredding.com>",
+		// EMAIL_FROM: per-project local-part on the shared Resend-verified
+		// sending domain send.font11a.io (one verified domain serves the whole
+		// fleet). reply-to is the visitor, so the from-brand is internal-only.
+		"EMAIL_FROM": "Stĕphen Redding <stephenredding.com@send.font11a.io>",
 		"EMAIL_TO": ""
 	}
 }
