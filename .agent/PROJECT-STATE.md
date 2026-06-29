@@ -74,16 +74,15 @@ Deferred work routes by kind. The one tracked deferral so far:
 **M1 is shipped.** Active work = **M2 Luminous Glow** (visual elevation). Owner
 feels the site "still feels like Hugo" — too flat/static vs font11a/risentech.
 Approved a warm-but-serene glamour pass (animated aurora, film grain, gradient
-headline, scroll-reveal, glow/glass; keep layout + copy). **M2.T1 is BUILT + deployed to preview, awaiting owner review** (owner rebooted,
-"right back"). Branch `feat/m2-luminous-glow` (8bc85be). **PREVIEW URL:
-https://glow-preview.stephenredding-com.pages.dev** — production
-stephenredding.com is UNCHANGED (still calm). The preview has: animated warm
-aurora, film grain, gradient "truth" headline + blur-in, scroll-reveals, amber
-glow CTA + 16px nav glass, restyled footer copyright (fixes the "plain text").
-svelte-check 0 errors; CSP intact; reduced-motion respected. When owner returns:
-have them open the preview URL, react, tweak as needed, then **M2.T2** rolls the
-treatment across all pages and merges `feat/m2-luminous-glow` → main (deploys to
-production). Full spec: `.agent/REPORTS/luminous-glow-plan.md`.
+headline, scroll-reveal, glow/glass; keep layout + copy). **M2 (Luminous Glow) SHIPPED 2026-06-28** — live on https://stephenredding.com:
+ambient warm aurora + film grain + gradient headlines + scroll-reveals + amber
+glow/glass across all 7 pages; footer copyright restyled; greeting paired as a
+caption under the hero portrait. Owner approved the home preview, then said
+"roll it"; merged `feat/m2-luminous-glow` → main, CI green. svelte-check 0
+errors; CSP intact; reduced-motion respected. (Preview branch
+`glow-preview.stephenredding-com.pages.dev` can be left or deleted.) No active
+milestone now — remaining optional: live form Turnstile round-trip test (owner),
+B1 sentinel instance, the 1 low `cookie` dep advisory on next Kit bump.
 
 ---
 ### (M1 archive note) Continue M1 — superseded; M1 shipped 2026-06-28.

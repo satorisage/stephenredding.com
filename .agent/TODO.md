@@ -15,8 +15,6 @@
 
 ## Next
 
-- [ ] Roll the approved treatment across About, Services (index+detail), Certifications, Praise, Contact, Nav, Footer — source: ROADMAP M2.T2
-
 ## Parked
 
 - [ ] Stand up a new personal sentinel instance (own `sites.ts` register, CF Access policy, Pages project) to audit this site — source: ROADMAP B1 (PROJECT-SCOPE.md)

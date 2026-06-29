@@ -30,13 +30,13 @@
       done-when: Hugo + Go templates + Tailwind v3 gone; build green; no dead config.
 - [x] **T10** Verify M1 definition-of-done live + register the site in a sentinel instance — depends: [T9] — done: cutover to Cloudflare Pages complete (apex + www CNAME → pages.dev, GitHub A records removed, iCloud MX untouched). Live verification on `https://stephenredding.com`: all 8 pages 200, HTTP→HTTPS 301, robots/sitemap/canonical/JSON-LD/strict-CSP present, Turnstile widget live, disabled service 404s, cert images load, Lighthouse green in CI. All 5 SCOPE DoD points met. Sentinel registration deferred to backlog **B1** (instance not yet stood up).
 
-### M2 — Luminous Glow (visual elevation)
-**Admitted:** 2026-06-28 · **Goal:** Add the premium/"glamour" production layer (animated warm aurora, film grain, gradient headline, scroll-reveal, glow+glass) — keeping the existing layout + copy — so the site feels like the fleet (font11a/risentech) while staying calm + warm. Spec: `.agent/REPORTS/luminous-glow-plan.md`.
+### M2 — Luminous Glow (visual elevation)  ✅ SHIPPED 2026-06-28
+**Admitted:** 2026-06-28 · **Shipped:** 2026-06-28 (live on https://stephenredding.com, CI green) · **Goal:** Add the premium/"glamour" production layer (animated warm aurora, film grain, gradient headline, scroll-reveal, glow+glass) — keeping the existing layout + copy — so the site feels like the fleet (font11a/risentech) while staying calm + warm. Spec: `.agent/REPORTS/luminous-glow-plan.md`.
 
-- [~] **T1** Home-page first pass — aurora + grain + gradient headline + scroll-reveal + glow/glass + footer copyright fix; deploy to a **preview** branch URL (not production) for owner sign-off — source: REPORTS/luminous-glow-plan.md — **BUILT + deployed to preview, awaiting owner review.** Branch `feat/m2-luminous-glow` (commit 8bc85be). **Preview URL: https://glow-preview.stephenredding-com.pages.dev** (production stephenredding.com unchanged). svelte-check 0 errors; CSP intact. Components: Aurora.svelte, reveal action, grain (app.css body::after), gradient-text, glow tokens. → next: owner reacts to the vibe; tweak, then T2 rolls site-wide + merges to main.
-      done-when: home shows animated aurora, grain, gradient H1 word, scroll-reveals, glow CTA; `prefers-reduced-motion` respected; live on a preview URL; production unchanged.
-- [ ] **T2** Roll the approved treatment across About, Services (index+detail), Certifications, Praise, Contact, Nav, Footer — depends: [T1]
-      done-when: every page carries the elevation cohesively; build clean; deployed to production after owner approves the home vibe.
+- [x] **T1** Home-page first pass — aurora + grain + gradient headline + scroll-reveal + glow/glass + footer copyright fix — done: owner approved the preview vibe (incl. a fix pairing the greeting as a caption under the portrait so it always lines up). Components: Aurora.svelte, reveal action, grain (app.css body::after), gradient-text, glow tokens.
+      done-when: home shows animated aurora, grain, gradient H1 word, scroll-reveals, glow CTA; `prefers-reduced-motion` respected.
+- [x] **T2** Roll the approved treatment across all pages — depends: [T1] — done: aurora promoted to a single ambient layout background (z-layered); gradient headings + scroll-reveals on About, Services (index+detail), Certifications, Praise, Contact; nav glass + button glow + footer restyle global. Merged `feat/m2-luminous-glow` → main; CI green; **live on https://stephenredding.com** (all 7 pages 200, glow verified). svelte-check 0 errors; CSP intact; reduced-motion respected.
+      done-when: every page carries the elevation cohesively; build clean; deployed to production.
 
 ## Loose
 
