@@ -1,15 +1,16 @@
 # Project State
 
 **Last updated:** 2026-06-28
-**Active focus:** M1 migration — **T1–T7 done (everything buildable without
-the operator's accounts).** Full site + conformance + lead form all code-complete
-and verified locally (`svelte-check` 0 errors, builds clean). Lead form
-validates/sends with graceful degradation; live send needs creds. **Sole ready
-task: T8 (deploy)** — the hard cred gate: needs `CLOUDFLARE_API_TOKEN` +
-`CLOUDFLARE_ACCOUNT_ID`, a CF Pages project, the Turnstile/Graph/analytics
-secrets set in CF, and DNS moved from GitHub Pages → Cloudflare Pages. Nothing
-pushed to origin yet — **the live site is still the old Hugo on GitHub Pages**,
-unaffected. T9 (remove Hugo) and T10 (verify) follow the deploy.
+**Active focus:** **M1 SHIPPED.** stephenredding.com is LIVE on Cloudflare Pages
+(SvelteKit/Svelte 5/TS, Luminous Calm theme) — all 8 pages, Turnstile + Resend
+lead form (verified), full conformance surface, HTTPS, custom-domain cutover
+done (apex+www → CF Pages; iCloud email untouched); Hugo removed; CI auto-deploys
+on push. Portrait (me.jpg) added to home + about. **Open follow-ups:** (1) copy
+revision — reframe toward "peace already within, not earned/striven for"
+(user-requested, proposal pending review); (2) Web Analytics token (CF token
+lacked Account-Analytics:Edit); (3) update risentech.net sender →
+`risentech.net@send.font11a.io` (separate repo, user-requested); (4) 7 Dependabot
+vulns to review; (5) B1 backlog — personal sentinel instance.
 
 ---
 

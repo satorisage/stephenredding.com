@@ -4,6 +4,8 @@ export const profile = {
 	role: 'Self-Awareness Coach',
 	greeting: 'Hi, I go by Stĕphen.',
 	email: 'stephen.redding31@gmail.com',
+	/** Portrait, served from /static. */
+	photo: '/images/me.jpg',
 	/** About-page body paragraphs. */
 	about: [
 		'I help people reconnect with the truth of who they are — beyond fear, shame, and the old beliefs that have clouded their identity.',

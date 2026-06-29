@@ -12,8 +12,13 @@
 
 <article class="section container">
 	<header class="head">
-		<p class="eyebrow">{profile.role}</p>
-		<h1>{profile.greeting}</h1>
+		<div class="portrait">
+			<img src={profile.photo} alt="Stĕphen Redding" width="320" height="320" />
+		</div>
+		<div class="intro">
+			<p class="eyebrow">{profile.role}</p>
+			<h1>{profile.greeting}</h1>
+		</div>
 	</header>
 
 	<div class="prose body">
@@ -32,7 +37,25 @@
 		padding-block: var(--space-xl);
 	}
 	.head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-l);
 		margin-bottom: var(--space-l);
+	}
+	.portrait {
+		flex: none;
+	}
+	.portrait img {
+		width: clamp(8rem, 28vw, 14rem);
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: var(--radius-l);
+		border: 1px solid var(--border);
+		box-shadow: var(--shadow-lift);
+	}
+	.intro {
+		flex: 1 1 16rem;
 	}
 	.body {
 		font-size: var(--step-1);

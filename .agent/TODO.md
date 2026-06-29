@@ -13,9 +13,6 @@
 
 ## Now
 
-- [ ] CI/deploy — `wrangler.jsonc` bindings/vars, GitHub Actions (check → build → `wrangler pages deploy`), secrets, custom domain — source: ROADMAP M1.T8
-- [ ] Verify M1 definition-of-done live + register the site in a sentinel instance — source: ROADMAP M1.T10
-
 ## Next
 
 ## Parked

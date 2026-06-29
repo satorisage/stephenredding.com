@@ -5,8 +5,8 @@
 
 ## Active
 
-### M1 — Hugo → SvelteKit/Cloudflare migration
-**Admitted:** 2026-06-28 · **Goal:** Re-platform stephenredding.com onto the fleet SvelteKit + Svelte 5 + TypeScript + Cloudflare Pages stack, with a Turnstile+Graph lead form and a sentinel-conformant public surface, preserving all existing content.
+### M1 — Hugo → SvelteKit/Cloudflare migration  ✅ SHIPPED 2026-06-28
+**Admitted:** 2026-06-28 · **Shipped:** 2026-06-28 · **Goal:** Re-platform stephenredding.com onto the fleet SvelteKit + Svelte 5 + TypeScript + Cloudflare Pages stack, with a Turnstile lead form (Resend email) and a sentinel-conformant public surface, preserving all existing content. **All tasks T1–T10 done; live on https://stephenredding.com.** (Next session: rotate this block to `ROADMAP-SHIPPED.md` per D-0072.)
 
 - [x] **T1** Scaffold a fresh SvelteKit + `adapter-cloudflare` project (fleet tooling versions, own layout — not a sibling copy) — source: PROJECT-SCOPE.md — done: branch feat/m1-t1-scaffold — `svelte-check` 0 errors/0 warnings, `vite build` → `.svelte-kit/cloudflare/_worker.js`, dev server serves HTTP 200.
       done-when: dev serves a SvelteKit page; `package.json`, `vite.config.ts`, `wrangler.jsonc`, `tsconfig` (strict) present; Svelte 5 runes enabled.
@@ -23,14 +23,12 @@
       done-when: contact form posts to a `+page.server.ts` action that verifies Turnstile server-side and sends via Cloudflare Email Routing; mailto fallback decided.
 - [x] **T7** Conformance surface — robots.txt, sitemap.xml, canonical, JSON-LD, strict hashed CSP, Cloudflare Web Analytics — depends: [T5] — done: `static/robots.txt`; prerendered `sitemap.xml` endpoint (public pages only — excludes noindex praise + disabled service); per-page `<link rel=canonical>` + Person/WebSite JSON-LD site-wide and Service JSON-LD on detail pages (`$lib/seo` + JsonLd component); **strict hashed CSP** via `svelte.config.js` `kit.csp` (mode hash, no `unsafe-inline`, allowlists cloudflareinsights + challenges.cloudflare.com) — verified injected with script hash; CF Web Analytics beacon (`Analytics.svelte`, gated by `PUBLIC_CF_ANALYTICS_TOKEN` — omitted without token, present with). `svelte-check` 0 errors; build clean both with/without token.
       done-when: robots + sitemap emitted; canonical + JSON-LD on pages; CSP without `unsafe-inline`; analytics beacon wired via `PUBLIC_CF_ANALYTICS_TOKEN` (token set at deploy / T8).
-- [ ] **T8** CI/deploy — `wrangler.jsonc` bindings/vars, GitHub Actions (check → build → `wrangler pages deploy`), secrets, custom domain — depends: [T6, T7]
-      held: creds
+- [x] **T8** CI/deploy — `wrangler.jsonc` vars, GitHub Actions (check → build → `wrangler pages deploy`), secrets, custom domain — depends: [T6, T7] — done: project `stephenredding-com`; GH Actions deploy green on push (check/build/deploy/lighthouse all ✓); GH secrets `CLOUDFLARE_API_TOKEN`/`_ACCOUNT_ID` set; Turnstile + Resend secrets set; custom domain cut over (apex+www → CF Pages, HTTPS live). Web Analytics token deferred (CF token lacked Account-Analytics:Edit).
       progress (2026-06-28): **Site LIVE on Cloudflare Pages** (`stephenredding-com.pages.dev`, project `stephenredding-com`, account da577f8e…). Done: CI workflow `deploy.yml`; GH secrets `CLOUDFLARE_API_TOKEN`/`CLOUDFLARE_ACCOUNT_ID` set; Turnstile widget created (sitekey var + secret); Resend wired + **verified end-to-end** (live test email delivered, sender `stephenredding.com@send.font11a.io` on the shared send.font11a.io domain, to → gmail). **Remaining:** Web Analytics (token — CF token lacks Account Analytics:Edit); **custom-domain cutover** (apex A→GitHub Pages must switch to CF Pages); push origin to enable CI. Guide: `.agent/REPORTS/t8-deploy-setup.md`.
       done-when: push to `main` builds + deploys to CF Pages; `stephenredding.com` serves the SvelteKit site over HTTPS; secrets set via `wrangler secret`/CI store.
 - [x] **T9** Remove Hugo + Tailwind v3 — depends: [T8] (operator-authorized early) — done: removed archetypes/, assets/, content/, data/, layouts/, hugo.toml, generate-safelist.js, tailwind.config.js, tailwind-safelist.json, static/css/, CNAME, `.github/workflows/hugo.yml`. Repo is SvelteKit-only; `static/images` + robots.txt preserved. `svelte-check` 0 errors, build clean, 17 cert images intact in output.
       done-when: Hugo + Go templates + Tailwind v3 gone; build green; no dead config.
-- [ ] **T10** Verify M1 definition-of-done live + register the site in a sentinel instance — depends: [T9]
-      done-when: all 5 PROJECT-SCOPE DoD points demonstrably true on the live domain; site added to a sentinel `sites.ts` (or the sentinel-instance backlog task filed if the instance isn't stood up yet).
+- [x] **T10** Verify M1 definition-of-done live + register the site in a sentinel instance — depends: [T9] — done: cutover to Cloudflare Pages complete (apex + www CNAME → pages.dev, GitHub A records removed, iCloud MX untouched). Live verification on `https://stephenredding.com`: all 8 pages 200, HTTP→HTTPS 301, robots/sitemap/canonical/JSON-LD/strict-CSP present, Turnstile widget live, disabled service 404s, cert images load, Lighthouse green in CI. All 5 SCOPE DoD points met. Sentinel registration deferred to backlog **B1** (instance not yet stood up).
 
 ## Loose
 

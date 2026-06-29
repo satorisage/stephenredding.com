@@ -18,17 +18,22 @@
 <section class="hero">
 	<div class="hero-glow" aria-hidden="true"></div>
 	<div class="container hero-inner">
-		<p class="eyebrow">{profile.role}</p>
-		<h1>Reconnect with the<br /><em>truth</em> of who you are.</h1>
-		<p class="lede prose">
-			I help people move beyond fear, shame, and the old beliefs that have clouded their
-			identity — back to the clarity, peace, and freedom already within them.
-		</p>
-		<div class="cta-row">
-			<a class="btn btn-primary" href="/contact">Book a Discovery Call</a>
-			<a class="btn btn-ghost" href="/services">Explore the work</a>
+		<div class="hero-text">
+			<p class="eyebrow">{profile.role}</p>
+			<h1>Reconnect with the<br /><em>truth</em> of who you are.</h1>
+			<p class="lede prose">
+				I help people move beyond fear, shame, and the old beliefs that have clouded their
+				identity — back to the clarity, peace, and freedom already within them.
+			</p>
+			<div class="cta-row">
+				<a class="btn btn-primary" href="/contact">Book a Discovery Call</a>
+				<a class="btn btn-ghost" href="/services">Explore the work</a>
+			</div>
+			<p class="signature">— {profile.greeting}</p>
 		</div>
-		<p class="signature">— {profile.greeting}</p>
+		<div class="hero-portrait">
+			<img src={profile.photo} alt="Stĕphen Redding" width="440" height="440" />
+		</div>
 	</div>
 </section>
 
@@ -85,6 +90,31 @@
 	}
 	.hero-inner {
 		position: relative;
+		display: grid;
+		gap: var(--space-xl);
+		align-items: center;
+	}
+	@media (min-width: 52rem) {
+		.hero-inner {
+			grid-template-columns: 1.3fr 1fr;
+		}
+	}
+	.hero-portrait {
+		justify-self: center;
+		order: -1;
+	}
+	@media (min-width: 52rem) {
+		.hero-portrait {
+			order: 0;
+		}
+	}
+	.hero-portrait img {
+		width: clamp(12rem, 34vw, 22rem);
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: var(--radius-l);
+		border: 1px solid var(--border);
+		box-shadow: var(--shadow-lift);
 	}
 	h1 {
 		max-width: 18ch;
