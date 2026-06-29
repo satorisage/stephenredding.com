@@ -13,7 +13,11 @@
 
 ## Now
 
+- [ ] Home-page first pass — aurora + grain + gradient headline + scroll-reveal + glow/glass + footer copyright fix; deploy to a **preview** branch URL (not production) for owner sign-off — source: ROADMAP M2.T1 (REPORTS/luminous-glow-plan.md)
+
 ## Next
+
+- [ ] Roll the approved treatment across About, Services (index+detail), Certifications, Praise, Contact, Nav, Footer — source: ROADMAP M2.T2
 
 ## Parked
 
