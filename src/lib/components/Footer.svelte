@@ -14,16 +14,25 @@
 		</div>
 		<div class="meta">
 			<SocialLinks />
-			<p class="copy">© {year} {profile.name} · {profile.role}</p>
+			<p class="copy">
+				<span class="brand">{profile.name}</span>
+				<span class="dot">·</span>
+				{profile.role}
+				<span class="dot">·</span>
+				© {year}
+			</p>
 		</div>
 	</div>
 </footer>
 
 <style>
 	.site-footer {
+		position: relative;
 		margin-top: var(--space-2xl);
 		border-top: 1px solid var(--border);
-		background: var(--surface);
+		background:
+			radial-gradient(80% 120% at 50% 0%, var(--aurora-1), transparent 60%),
+			var(--surface);
 		padding-block: var(--space-xl);
 	}
 	.inner {
@@ -46,8 +55,20 @@
 		align-items: flex-start;
 	}
 	.copy {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.5ch;
 		color: var(--text-muted);
 		font-size: var(--step--1);
 		margin: 0;
+	}
+	.copy .brand {
+		font-family: var(--font-display);
+		font-size: var(--step-0);
+		color: var(--text);
+	}
+	.copy .dot {
+		color: var(--accent-ink);
 	}
 </style>

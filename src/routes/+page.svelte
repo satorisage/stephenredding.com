@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { profile, publishedServices, certifications, certificationsByCategory } from '$lib/content';
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
+	import Aurora from '$lib/components/Aurora.svelte';
+	import { reveal } from '$lib/actions/reveal';
 
 	const services = publishedServices();
 	const certCount = certifications.length;
@@ -16,11 +18,11 @@
 </svelte:head>
 
 <section class="hero">
-	<div class="hero-glow" aria-hidden="true"></div>
+	<Aurora />
 	<div class="container hero-inner">
 		<div class="hero-text">
 			<p class="eyebrow">{profile.role}</p>
-			<h1>Reconnect with the<br /><em>truth</em> of who you are.</h1>
+			<h1 class="hero-title">Reconnect with the<br /><em class="gradient-text">truth</em> of who you are.</h1>
 			<p class="lede prose">
 				I help you move beyond fear, shame, and the old beliefs that have clouded your
 				identity — back to the clarity, peace, and freedom already within you.
@@ -38,7 +40,7 @@
 </section>
 
 <section class="section container">
-	<header class="section-head">
+	<header class="section-head" use:reveal>
 		<p class="eyebrow">How we work together</p>
 		<h2>Coaching that uncovers what's already there.</h2>
 		<p class="prose lede-muted">
@@ -47,7 +49,7 @@
 		</p>
 	</header>
 
-	<ul class="service-grid">
+	<ul class="service-grid" use:reveal={{ delay: 120 }}>
 		{#each services as service (service.slug)}
 			<li>
 				<a class="service-card" href="/services/{service.slug}">
@@ -63,7 +65,7 @@
 </section>
 
 <section class="section container">
-	<div class="credibility">
+	<div class="credibility" use:reveal>
 		<p class="eyebrow">Trained &amp; certified</p>
 		<h2>{certCount} certifications across four disciplines.</h2>
 		<p class="prose lede-muted">
@@ -80,13 +82,20 @@
 		overflow: hidden;
 		padding-block: clamp(var(--space-xl), 12vh, var(--space-2xl));
 	}
-	.hero-glow {
-		position: absolute;
-		inset: -20% 0 auto 0;
-		height: 70%;
-		background: var(--glow);
-		filter: blur(8px);
-		pointer-events: none;
+	.hero-title {
+		animation: title-in 1.1s var(--ease) 0.1s both;
+	}
+	@keyframes title-in {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
+			filter: blur(10px);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.hero-title {
+			animation: none;
+		}
 	}
 	.hero-inner {
 		position: relative;

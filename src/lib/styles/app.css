@@ -127,11 +127,11 @@ img {
 .btn-primary {
 	background: var(--accent);
 	color: var(--accent-contrast);
-	box-shadow: var(--shadow-soft);
+	box-shadow: 0 8px 24px var(--glow-amber);
 }
 .btn-primary:hover {
 	transform: translateY(-2px);
-	box-shadow: var(--shadow-lift);
+	box-shadow: 0 14px 40px var(--glow-amber);
 	color: var(--accent-contrast);
 }
 .btn-ghost {
@@ -143,4 +143,50 @@ img {
 	border-color: var(--accent-ink);
 	color: var(--accent-ink);
 	transform: translateY(-2px);
+}
+
+/* — Gradient headline text — */
+.gradient-text {
+	background: var(--text-gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+/* — Scroll reveal (paired with the use:reveal action) — */
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	filter: blur(6px);
+	transition:
+		opacity 0.75s var(--ease) var(--reveal-delay, 0ms),
+		transform 0.75s var(--ease) var(--reveal-delay, 0ms),
+		filter 0.75s var(--ease) var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+
+/* — Film grain: premium tactile overlay over the whole page — */
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	opacity: 0.038;
+	mix-blend-mode: var(--grain-blend, overlay);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-size: 200px 200px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		opacity: 1;
+		transform: none;
+		filter: none;
+		transition: none;
+	}
 }

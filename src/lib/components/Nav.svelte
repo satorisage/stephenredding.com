@@ -35,8 +35,9 @@
 		position: sticky;
 		top: 0;
 		z-index: 10;
-		background: color-mix(in oklch, var(--bg), transparent 12%);
-		backdrop-filter: blur(10px);
+		background: color-mix(in oklch, var(--bg), transparent 18%);
+		backdrop-filter: blur(16px) saturate(160%);
+		-webkit-backdrop-filter: blur(16px) saturate(160%);
 		border-bottom: 1px solid var(--border);
 	}
 	.bar {
