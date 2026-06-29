@@ -14,11 +14,9 @@
 ## Now
 
 - [ ] CI/deploy — `wrangler.jsonc` bindings/vars, GitHub Actions (check → build → `wrangler pages deploy`), secrets, custom domain — source: ROADMAP M1.T8
+- [ ] Verify M1 definition-of-done live + register the site in a sentinel instance — source: ROADMAP M1.T10
 
 ## Next
-
-- [ ] Remove Hugo + Tailwind v3 (layouts/, content/, archetypes/, `hugo.toml`, `generate-safelist.js`, tailwind v3 config, `.github/workflows/hugo.yml`); update `package.json` — source: ROADMAP M1.T9
-- [ ] Verify M1 definition-of-done live + register the site in a sentinel instance — source: ROADMAP M1.T10
 
 ## Parked
 
