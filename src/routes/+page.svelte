@@ -22,8 +22,8 @@
 			<p class="eyebrow">{profile.role}</p>
 			<h1>Reconnect with the<br /><em>truth</em> of who you are.</h1>
 			<p class="lede prose">
-				I help people move beyond fear, shame, and the old beliefs that have clouded their
-				identity — back to the clarity, peace, and freedom already within them.
+				I help you move beyond fear, shame, and the old beliefs that have clouded your
+				identity — back to the clarity, peace, and freedom already within you.
 			</p>
 			<div class="cta-row">
 				<a class="btn btn-primary" href="/contact">Book a Discovery Call</a>

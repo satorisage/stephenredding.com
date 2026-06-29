@@ -9,7 +9,7 @@
 	<title>Services — Stĕphen Redding</title>
 	<meta
 		name="description"
-		content="Personalized coaching to help you cultivate inner peace, align with your values, and navigate life with clarity and confidence."
+		content="Personalized coaching to help you reconnect with the peace already within you, live from your values, and meet life with clarity and confidence."
 	/>
 </svelte:head>
 

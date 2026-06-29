@@ -2,7 +2,7 @@ import { CERT_CATEGORIES, type CertCategory, type Certification } from './types'
 
 /** Intro copy for the Certifications page (from the original Hugo _index). */
 export const certificationsIntro =
-	'Each of these certifications represents a step in my journey toward deeply understanding how personal transformation unfolds. They have provided me with valuable tools and frameworks to hold safe, supportive spaces for others as they navigate their own paths toward clarity and empowerment.';
+	'Each of these certifications represents a step in my own journey toward deeply understanding how personal transformation unfolds. They’ve given me valuable tools and frameworks to support others as they reconnect with the clarity and peace already within them.';
 
 export const certifications: Certification[] = [
 	// — Life Transformation Coaching —

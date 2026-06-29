@@ -2,7 +2,7 @@ import type { Service } from './types';
 
 /** Intro copy for the Services page (from the original Hugo _index). */
 export const servicesIntro =
-	'I provide personalized coaching designed to support your growth and help you cultivate inner peace. Each session is tailored in the moment, focusing on empowering you to navigate life with clarity and confidence. Together, we’ll work to align your actions with your values and foster a deeper connection to yourself.';
+	'I provide personalized coaching to help you reconnect with the peace that’s already within you. Each session is tailored in the moment — not to add anything or fix anything, but to clear away what’s been clouding the clarity and confidence that are already yours. Together, we simply make space for you to live from your values and the truth of who you are.';
 
 export const services: Service[] = [
 	{
@@ -13,11 +13,10 @@ export const services: Service[] = [
 		summary:
 			'Personalized one-on-one coaching that holds space for you to uncover the clarity and truth already within you.',
 		intro: [
-			"My personal coaching services are about holding space for you to explore what you truly need and already know deep within yourself. The process isn't about guiding you toward a predetermined outcome or belief; rather, it's about creating a supportive environment where you can safely uncover your own clarity and truth.",
-			"Through meaningful conversations and thoughtful self-reflection, we'll gently explore emotional blocks, limiting beliefs, and subconscious patterns that might be preventing you from fully stepping into your potential. The answers you seek are uniquely yours, and my role is to guide and support you in discovering them.",
-			"Coaching isn't about adding something new—it's about creating space to recognize what's already there, empowering you to trust your inner wisdom. The results are yours to define, emerging naturally as you reconnect with your clarity, confidence, and self-empowerment. The path is yours to shape; I'm here to support and facilitate your journey.",
-			"A typical session begins with what's present for you in the moment. Whether addressing a specific challenge or exploring recurring patterns, we approach each topic with curiosity and compassion. Together, we'll examine your thoughts and feelings, helping you identify and release beliefs that no longer serve you. The goal is to hold a safe, supportive space where you can gain insight and take aligned, meaningful steps forward.",
-			'In my own journey, learning to trust myself and recognizing my ability to navigate life clearly and confidently has been transformative. My hope is to help you discover that same empowering clarity within yourself—not by giving you answers, but by supporting you as you uncover your own.'
+			"My personal coaching is about creating room for you to explore what you already know deep within yourself. It isn't about guiding you toward a predetermined outcome or belief — it's a place where you can safely uncover your own clarity and truth.",
+			"Through honest conversation and thoughtful reflection, we'll gently explore the emotional blocks, limiting beliefs, and subconscious patterns that have been clouding the clarity and peace that are already yours. The answers you're looking for are uniquely yours; my role is to help you find them.",
+			"Coaching isn't about adding something new — it's about recognizing what's already there, so you can trust your own inner wisdom. The results are yours to define, emerging naturally as you reconnect with your clarity and confidence. The path is yours to shape; I'm here to walk alongside it.",
+			"A typical session begins with whatever is present for you in the moment — a specific challenge or a recurring pattern — met with curiosity and compassion. Together we'll look honestly at your thoughts and feelings and release the beliefs that no longer serve you. In my own life, learning to trust myself changed everything; my hope is to help you find that same clarity — not by handing you answers, but by helping you uncover your own."
 		],
 		sections: [],
 		cta: { text: 'Book a Discovery Call', href: '/contact' },

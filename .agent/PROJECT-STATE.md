@@ -5,9 +5,9 @@
 (SvelteKit/Svelte 5/TS, Luminous Calm theme) — all 8 pages, Turnstile + Resend
 lead form (verified), full conformance surface, HTTPS, custom-domain cutover
 done (apex+www → CF Pages; iCloud email untouched); Hugo removed; CI auto-deploys
-on push. Portrait (me.jpg) added to home + about. **Open follow-ups:** (1) copy
-revision — reframe toward "peace already within, not earned/striven for"
-(user-requested, proposal pending review); (2) Web Analytics token (CF token
+on push. Portrait (me.jpg) added to home + about. Copy reframed toward "peace
+already within" (services intro, hero→2nd person, 1:1 tightened 5→4, certs
+intro, services meta) — live. **Open follow-ups:** (1) Web Analytics token (CF token
 lacked Account-Analytics:Edit); (3) update risentech.net sender →
 `risentech.net@send.font11a.io` (separate repo, user-requested); (4) 7 Dependabot
 vulns to review; (5) B1 backlog — personal sentinel instance.
