@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { testimonials } from '$lib/content';
+	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <svelte:head>
@@ -11,9 +12,9 @@
 </svelte:head>
 
 <section class="section container">
-	<header class="head">
+	<header class="head" use:reveal>
 		<p class="eyebrow">Praise</p>
-		<h1>Words from the journey.</h1>
+		<h1>Words from the <span class="gradient-text">journey</span>.</h1>
 	</header>
 
 	{#if testimonials.length > 0}

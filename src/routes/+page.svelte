@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { profile, publishedServices, certifications, certificationsByCategory } from '$lib/content';
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
-	import Aurora from '$lib/components/Aurora.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const services = publishedServices();
@@ -18,7 +17,6 @@
 </svelte:head>
 
 <section class="hero">
-	<Aurora />
 	<div class="container hero-inner">
 		<div class="hero-text">
 			<p class="eyebrow">{profile.role}</p>

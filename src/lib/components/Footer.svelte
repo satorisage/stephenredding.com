@@ -28,6 +28,7 @@
 <style>
 	.site-footer {
 		position: relative;
+		z-index: 1;
 		margin-top: var(--space-2xl);
 		border-top: 1px solid var(--border);
 		background:

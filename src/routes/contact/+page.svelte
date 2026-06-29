@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 	import { env } from '$env/dynamic/public';
 	import { profile } from '$lib/content';
+	import { reveal } from '$lib/actions/reveal';
 
 	let { form } = $props();
 
@@ -25,10 +26,9 @@
 </svelte:head>
 
 <section class="section container">
-	<div class="hero-glow" aria-hidden="true"></div>
-	<div class="inner">
+	<div class="inner" use:reveal>
 		<p class="eyebrow">{contact.heading}</p>
-		<h1>Let's begin with a conversation.</h1>
+		<h1>Let's begin with a <span class="gradient-text">conversation</span>.</h1>
 		<p class="prose lede">{contact.body}</p>
 
 		{#if form?.success}
@@ -94,17 +94,7 @@
 
 <style>
 	.section {
-		position: relative;
-		overflow: hidden;
 		padding-block: var(--space-2xl);
-	}
-	.hero-glow {
-		position: absolute;
-		inset: -30% 0 auto 0;
-		height: 60%;
-		background: var(--glow);
-		filter: blur(8px);
-		pointer-events: none;
 	}
 	.inner {
 		position: relative;

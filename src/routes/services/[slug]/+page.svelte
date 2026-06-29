@@ -3,6 +3,7 @@
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
 	import JsonLd from '$lib/components/JsonLd.svelte';
 	import { serviceJsonLd } from '$lib/seo';
+	import { reveal } from '$lib/actions/reveal';
 
 	let { data } = $props();
 	const service = $derived(data.service);
@@ -23,13 +24,13 @@
 <article class="section container">
 	<a class="back" href="/services">← All services</a>
 
-	<header class="head">
+	<header class="head" use:reveal>
 		<span class="icon"><ServiceIcon icon={service.icon} size={32} /></span>
 		<p class="eyebrow">{service.tagline}</p>
-		<h1>{service.title}</h1>
+		<h1 class="gradient-text">{service.title}</h1>
 	</header>
 
-	<div class="prose body">
+	<div class="prose body" use:reveal={{ delay: 80 }}>
 		{#each service.intro as para, i (i)}
 			{#if para.startsWith('**') && para.endsWith('**')}
 				<p class="strong">{para.slice(2, -2)}</p>

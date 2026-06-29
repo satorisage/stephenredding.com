@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { servicesIntro, publishedServices } from '$lib/content';
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
+	import { reveal } from '$lib/actions/reveal';
 
 	const services = publishedServices();
 </script>
@@ -14,13 +15,13 @@
 </svelte:head>
 
 <section class="section container">
-	<header class="head">
+	<header class="head" use:reveal>
 		<p class="eyebrow">Services</p>
-		<h1>Coaching, tailored in the moment.</h1>
+		<h1><span class="gradient-text">Coaching</span>, tailored in the moment.</h1>
 		<p class="prose intro">{servicesIntro}</p>
 	</header>
 
-	<ul class="grid">
+	<ul class="grid" use:reveal={{ delay: 100 }}>
 		{#each services as service (service.slug)}
 			<li>
 				<a class="card" href="/services/{service.slug}">

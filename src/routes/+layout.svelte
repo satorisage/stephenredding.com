@@ -5,6 +5,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import JsonLd from '$lib/components/JsonLd.svelte';
 	import Analytics from '$lib/components/Analytics.svelte';
+	import Aurora from '$lib/components/Aurora.svelte';
 	import { canonical, siteJsonLd } from '$lib/seo';
 
 	let { children } = $props();
@@ -16,6 +17,9 @@
 <JsonLd schema={siteJsonLd()} />
 <Analytics />
 
+<!-- Ambient warm aurora behind every page (fixed, low-key). -->
+<Aurora fixed />
+
 <a class="skip-link" href="#main">Skip to content</a>
 <Nav />
 <div id="main">
@@ -24,6 +28,11 @@
 <Footer />
 
 <style>
+	/* Content sits above the ambient aurora (z-index 0) and lets it glow through. */
+	#main {
+		position: relative;
+		z-index: 1;
+	}
 	.skip-link {
 		position: absolute;
 		left: var(--space-s);

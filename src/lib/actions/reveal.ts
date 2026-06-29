@@ -20,6 +20,13 @@ export const reveal: Action<HTMLElement, { delay?: number } | undefined> = (node
 	node.classList.add('reveal');
 	if (params?.delay) node.style.setProperty('--reveal-delay', `${params.delay}ms`);
 
+	// Already in view on mount (above the fold) → reveal immediately, no flash.
+	const rect = node.getBoundingClientRect();
+	if (rect.top < innerHeight * 0.92 && rect.bottom > 0) {
+		node.classList.add('is-visible');
+		return;
+	}
+
 	const io = new IntersectionObserver(
 		(entries, obs) => {
 			for (const e of entries) {

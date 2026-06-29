@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { certificationsIntro, certificationsByCategory, certifications } from '$lib/content';
+	import { reveal } from '$lib/actions/reveal';
 
 	const groups = certificationsByCategory();
 	const total = certifications.length;
@@ -14,14 +15,14 @@
 </svelte:head>
 
 <section class="section container">
-	<header class="head">
+	<header class="head" use:reveal>
 		<p class="eyebrow">Certifications</p>
-		<h1>{total} certifications, four disciplines.</h1>
+		<h1><span class="gradient-text">{total} certifications</span>, four disciplines.</h1>
 		<p class="prose intro">{certificationsIntro}</p>
 	</header>
 
 	{#each groups as group (group.category)}
-		<section class="group">
+		<section class="group" use:reveal>
 			<h2>{group.category}</h2>
 			<ul class="grid">
 				{#each group.items as cert (cert.slug)}

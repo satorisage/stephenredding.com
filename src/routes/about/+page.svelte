@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { profile } from '$lib/content';
+	import { reveal } from '$lib/actions/reveal';
 </script>
 
 <svelte:head>
@@ -11,23 +12,23 @@
 </svelte:head>
 
 <article class="section container">
-	<header class="head">
-		<div class="portrait">
+	<header class="head" use:reveal>
+		<figure class="portrait">
 			<img src={profile.photo} alt="Stĕphen Redding" width="320" height="320" />
-		</div>
+		</figure>
 		<div class="intro">
 			<p class="eyebrow">{profile.role}</p>
-			<h1>{profile.greeting}</h1>
+			<h1 class="gradient-text">{profile.greeting}</h1>
 		</div>
 	</header>
 
-	<div class="prose body">
+	<div class="prose body" use:reveal={{ delay: 80 }}>
 		{#each profile.about as para, i (i)}
 			<p class:emphasis={para.startsWith('We’re not broken')}>{para}</p>
 		{/each}
 	</div>
 
-	<div class="cta">
+	<div class="cta" use:reveal>
 		<a class="btn btn-primary" href="/contact">Book a Discovery Call</a>
 	</div>
 </article>
@@ -45,6 +46,7 @@
 	}
 	.portrait {
 		flex: none;
+		margin: 0;
 	}
 	.portrait img {
 		width: clamp(8rem, 28vw, 14rem);
