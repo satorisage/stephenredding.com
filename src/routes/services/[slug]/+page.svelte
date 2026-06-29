@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
 	import JsonLd from '$lib/components/JsonLd.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { serviceJsonLd } from '$lib/seo';
 	import { reveal } from '$lib/actions/reveal';
 
@@ -9,10 +10,7 @@
 	const service = $derived(data.service);
 </script>
 
-<svelte:head>
-	<title>{service.title} — Stĕphen Redding</title>
-	<meta name="description" content={service.summary} />
-</svelte:head>
+<Seo title="{service.title} — Stĕphen Redding" description={service.summary} />
 <JsonLd
 	schema={serviceJsonLd({
 		name: service.title,

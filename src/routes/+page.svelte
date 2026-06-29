@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { profile, publishedServices, certifications, certificationsByCategory } from '$lib/content';
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const services = publishedServices();
@@ -8,13 +9,10 @@
 	const categories = certificationsByCategory().map((g) => g.category);
 </script>
 
-<svelte:head>
-	<title>Stĕphen Redding — Self-Awareness Coach</title>
-	<meta
-		name="description"
-		content="Self-awareness coaching to help you reconnect with the truth of who you are — beyond fear, shame, and the old beliefs that have clouded your identity."
-	/>
-</svelte:head>
+<Seo
+	title="Stĕphen Redding — Self-Awareness Coach"
+	description="Self-awareness coaching to help you reconnect with the truth of who you are — beyond fear, shame, and the old beliefs that have clouded your identity."
+/>
 
 <section class="hero">
 	<div class="container hero-inner">

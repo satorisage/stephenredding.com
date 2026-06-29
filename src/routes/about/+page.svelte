@@ -1,15 +1,13 @@
 <script lang="ts">
 	import { profile } from '$lib/content';
 	import { reveal } from '$lib/actions/reveal';
+	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<svelte:head>
-	<title>About — {profile.name}</title>
-	<meta
-		name="description"
-		content="Stĕphen Redding is a self-awareness coach helping people remember who they've always been."
-	/>
-</svelte:head>
+<Seo
+	title="About — {profile.name}"
+	description="Stĕphen Redding is a self-awareness coach helping people remember who they've always been."
+/>
 
 <article class="section container">
 	<header class="head" use:reveal>

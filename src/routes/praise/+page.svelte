@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { testimonials } from '$lib/content';
 	import { reveal } from '$lib/actions/reveal';
+	import Seo from '$lib/components/Seo.svelte';
 </script>
 
+<Seo
+	title="Praise — Stĕphen Redding"
+	description="Words from people Stĕphen Redding has worked with."
+/>
 <svelte:head>
-	<title>Praise — Stĕphen Redding</title>
-	<meta name="description" content="Words from people Stĕphen Redding has worked with." />
 	{#if testimonials.length === 0}
 		<meta name="robots" content="noindex" />
 	{/if}

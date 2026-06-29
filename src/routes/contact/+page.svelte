@@ -3,6 +3,7 @@
 	import { env } from '$env/dynamic/public';
 	import { profile } from '$lib/content';
 	import { reveal } from '$lib/actions/reveal';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let { form } = $props();
 
@@ -17,9 +18,11 @@
 	const errors = $derived((form?.errors ?? {}) as Record<string, string>);
 </script>
 
+<Seo
+	title="Get In Touch — Stĕphen Redding"
+	description="Reach out to book a Discovery Call with Stĕphen Redding."
+/>
 <svelte:head>
-	<title>Get In Touch — Stĕphen Redding</title>
-	<meta name="description" content="Reach out to book a Discovery Call with Stĕphen Redding." />
 	{#if sitekey}
 		{@html '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer><\/script>'}
 	{/if}

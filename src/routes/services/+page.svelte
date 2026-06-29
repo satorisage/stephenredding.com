@@ -2,17 +2,15 @@
 	import { servicesIntro, publishedServices } from '$lib/content';
 	import ServiceIcon from '$lib/components/ServiceIcon.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import Seo from '$lib/components/Seo.svelte';
 
 	const services = publishedServices();
 </script>
 
-<svelte:head>
-	<title>Services — Stĕphen Redding</title>
-	<meta
-		name="description"
-		content="Personalized coaching to help you reconnect with the peace already within you, live from your values, and meet life with clarity and confidence."
-	/>
-</svelte:head>
+<Seo
+	title="Services — Stĕphen Redding"
+	description="Personalized coaching to help you reconnect with the peace already within you, live from your values, and meet life with clarity and confidence."
+/>
 
 <section class="section container">
 	<header class="head" use:reveal>

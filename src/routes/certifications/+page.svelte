@@ -1,18 +1,16 @@
 <script lang="ts">
 	import { certificationsIntro, certificationsByCategory, certifications } from '$lib/content';
 	import { reveal } from '$lib/actions/reveal';
+	import Seo from '$lib/components/Seo.svelte';
 
 	const groups = certificationsByCategory();
 	const total = certifications.length;
 </script>
 
-<svelte:head>
-	<title>Certifications — Stĕphen Redding</title>
-	<meta
-		name="description"
-		content="{total} coaching certifications across Life Transformation, NLP, and Mental Health disciplines."
-	/>
-</svelte:head>
+<Seo
+	title="Certifications — Stĕphen Redding"
+	description="{total} coaching certifications across Life Transformation, NLP, and Mental Health disciplines."
+/>
 
 <section class="section container">
 	<header class="head" use:reveal>
