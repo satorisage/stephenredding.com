@@ -44,9 +44,8 @@
 
 ## Backlog
 
-- [ ] **B1** Stand up a new personal sentinel instance (own `sites.ts` register, CF Access policy, Pages project) to audit this site — source: PROJECT-SCOPE.md
-      revisit-when: M1 deployed live and conformance surface shipped (T7+T8 done)
-      stratum: committed
+- [x] **B1** Register this site in a sentinel instance — done 2026-06-28: added stephenredding.com to the **existing `font11a-sentinel`** register (`~/Projects/sentinel/sentinel-font11a/src/lib/content/sites.ts`) rather than standing up a new personal instance (operator direction). Probed live + registered honestly (passes most; FAIL og + llms, PARTIAL headers). Deploys at `sentinel-font11a.pages.dev`.
+      Surfaced gaps to remediate on stephenredding: add OpenGraph/Twitter tags, `llms.txt`, and HSTS + Permissions-Policy headers — then re-probe flips og/llms/headers to pass.
 
 ## Shipped
 

@@ -16,5 +16,3 @@
 ## Next
 
 ## Parked
-
-- [ ] Stand up a new personal sentinel instance (own `sites.ts` register, CF Access policy, Pages project) to audit this site — source: ROADMAP B1 (PROJECT-SCOPE.md)
