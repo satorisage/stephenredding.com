@@ -74,11 +74,16 @@ Deferred work routes by kind. The one tracked deferral so far:
 **M1 is shipped.** Active work = **M2 Luminous Glow** (visual elevation). Owner
 feels the site "still feels like Hugo" — too flat/static vs font11a/risentech.
 Approved a warm-but-serene glamour pass (animated aurora, film grain, gradient
-headline, scroll-reveal, glow/glass; keep layout + copy). Building **M2.T1**:
-home-page first pass on a feature branch → deploy to a PREVIEW branch URL (NOT
-production) for owner sign-off, then M2.T2 rolls it site-wide. Full spec:
-`.agent/REPORTS/luminous-glow-plan.md`. Owner also asked why the footer
-copyright reads "plain" — fold the footer restyle into T1.
+headline, scroll-reveal, glow/glass; keep layout + copy). **M2.T1 is BUILT + deployed to preview, awaiting owner review** (owner rebooted,
+"right back"). Branch `feat/m2-luminous-glow` (8bc85be). **PREVIEW URL:
+https://glow-preview.stephenredding-com.pages.dev** — production
+stephenredding.com is UNCHANGED (still calm). The preview has: animated warm
+aurora, film grain, gradient "truth" headline + blur-in, scroll-reveals, amber
+glow CTA + 16px nav glass, restyled footer copyright (fixes the "plain text").
+svelte-check 0 errors; CSP intact; reduced-motion respected. When owner returns:
+have them open the preview URL, react, tweak as needed, then **M2.T2** rolls the
+treatment across all pages and merges `feat/m2-luminous-glow` → main (deploys to
+production). Full spec: `.agent/REPORTS/luminous-glow-plan.md`.
 
 ---
 ### (M1 archive note) Continue M1 — superseded; M1 shipped 2026-06-28.

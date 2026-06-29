@@ -33,7 +33,7 @@
 ### M2 — Luminous Glow (visual elevation)
 **Admitted:** 2026-06-28 · **Goal:** Add the premium/"glamour" production layer (animated warm aurora, film grain, gradient headline, scroll-reveal, glow+glass) — keeping the existing layout + copy — so the site feels like the fleet (font11a/risentech) while staying calm + warm. Spec: `.agent/REPORTS/luminous-glow-plan.md`.
 
-- [ ] **T1** Home-page first pass — aurora + grain + gradient headline + scroll-reveal + glow/glass + footer copyright fix; deploy to a **preview** branch URL (not production) for owner sign-off — source: REPORTS/luminous-glow-plan.md
+- [~] **T1** Home-page first pass — aurora + grain + gradient headline + scroll-reveal + glow/glass + footer copyright fix; deploy to a **preview** branch URL (not production) for owner sign-off — source: REPORTS/luminous-glow-plan.md — **BUILT + deployed to preview, awaiting owner review.** Branch `feat/m2-luminous-glow` (commit 8bc85be). **Preview URL: https://glow-preview.stephenredding-com.pages.dev** (production stephenredding.com unchanged). svelte-check 0 errors; CSP intact. Components: Aurora.svelte, reveal action, grain (app.css body::after), gradient-text, glow tokens. → next: owner reacts to the vibe; tweak, then T2 rolls site-wide + merges to main.
       done-when: home shows animated aurora, grain, gradient H1 word, scroll-reveals, glow CTA; `prefers-reduced-motion` respected; live on a preview URL; production unchanged.
 - [ ] **T2** Roll the approved treatment across About, Services (index+detail), Certifications, Praise, Contact, Nav, Footer — depends: [T1]
       done-when: every page carries the elevation cohesively; build clean; deployed to production after owner approves the home vibe.
