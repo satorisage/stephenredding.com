@@ -45,7 +45,7 @@
 ## Backlog
 
 - [x] **B1** Register this site in a sentinel instance — done 2026-06-28: added stephenredding.com to the **existing `font11a-sentinel`** register (`~/Projects/sentinel/sentinel-font11a/src/lib/content/sites.ts`) rather than standing up a new personal instance (operator direction). Probed live + registered honestly (passes most; FAIL og + llms, PARTIAL headers). Deploys at `sentinel-font11a.pages.dev`.
-      Surfaced gaps to remediate on stephenredding: add OpenGraph/Twitter tags, `llms.txt`, and HSTS + Permissions-Policy headers — then re-probe flips og/llms/headers to pass.
+      Gaps surfaced by the probe were then **closed** (2026-06-28): added a Seo.svelte component (OG/Twitter, portrait share image) across all pages, an `llms.txt` route, and security headers (HSTS + Permissions-Policy + X-Frame-Options + COOP via `src/hooks.server.ts` + root `_headers`). Re-probed live + sentinel register flipped og/llms/headers → pass. Only lh-perf/cwv remain unknown (unmeasured).
 
 ## Shipped
 

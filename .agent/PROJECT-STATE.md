@@ -80,9 +80,13 @@ glow/glass across all 7 pages; footer copyright restyled; greeting paired as a
 caption under the hero portrait. Owner approved the home preview, then said
 "roll it"; merged `feat/m2-luminous-glow` → main, CI green. svelte-check 0
 errors; CSP intact; reduced-motion respected. (Preview branch
-`glow-preview.stephenredding-com.pages.dev` can be left or deleted.) No active
+`glow-preview.stephenredding-com.pages.dev` can be left or deleted.) Registered in **font11a-sentinel** (B1 done) and **all flagged gaps closed**:
+Seo component (OG/Twitter), llms.txt route, security headers (HSTS +
+Permissions-Policy + X-Frame-Options + COOP via hooks.server.ts + root
+`_headers`) — re-probed live, sentinel shows og/llms/headers = pass. No active
 milestone now — remaining optional: live form Turnstile round-trip test (owner),
-B1 sentinel instance, the 1 low `cookie` dep advisory on next Kit bump.
+measure lh-perf/cwv to fill the last 2 sentinel criteria, the 1 low `cookie` dep
+advisory on next Kit bump.
 
 ---
 ### (M1 archive note) Continue M1 — superseded; M1 shipped 2026-06-28.
