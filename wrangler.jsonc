@@ -20,10 +20,10 @@
 	"vars": {
 		"PUBLIC_TURNSTILE_SITEKEY": "0x4AAAAAAFLYSwWLQ3TAmNwv",
 		"PUBLIC_CF_ANALYTICS_TOKEN": "ca10f0730a0246318ea690bffebb887b",
-		// EMAIL_FROM: per-project local-part on the shared Resend-verified
-		// sending domain send.font11a.io (one verified domain serves the whole
-		// fleet). reply-to is the visitor, so the from-brand is internal-only.
-		"EMAIL_FROM": "Stĕphen Redding <stephenredding.com@send.font11a.io>",
+		// EMAIL_FROM: per-project local-part on the Resend-verified sending
+		// domain send.risentech.net (shared with the risentech.net contact form).
+		// reply-to is the visitor, so the from-brand is internal-only.
+		"EMAIL_FROM": "Stĕphen Redding <stephenredding.com@send.risentech.net>",
 		"EMAIL_TO": ""
 	}
 }
